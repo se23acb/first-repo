@@ -1,4 +1,4 @@
-***project aims***
+*** project aims ***
 - set up github, r and rstudio
 - meet and agree on 5 datasets
 - finalise and submit datasets
