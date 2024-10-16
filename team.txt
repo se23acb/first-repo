@@ -7,3 +7,4 @@
 - await allocated dataset to begin work
 - add collaborators to repo
 - listen gunna while work
+- repeat gunna while work
