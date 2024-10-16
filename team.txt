@@ -5,3 +5,4 @@
 - meet and agree on 5 datasets
 - finalise and submit datasets
 - await allocated dataset to begin work
+- add collaborators to repo
