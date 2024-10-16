@@ -1,5 +1,7 @@
 *** project aims ***
-- set up github, r and rstudio
+- create github and make repository
+- follow lap instr. to clone repo onto local machine
+- set up r and rstudio and integrate to github
 - meet and agree on 5 datasets
 - finalise and submit datasets
 - await allocated dataset to begin work
