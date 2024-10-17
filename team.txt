@@ -7,3 +7,4 @@
 - await allocated dataset to begin work
 - add collaborators to repo
 - attend lab in the morning and complete environment setup
+- thinking about ewuradwoa
