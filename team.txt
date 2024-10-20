@@ -10,3 +10,4 @@
 - complete lab session
 - respond to invite link from Ahsan
 - find out what merge is in git
+- use artificial intelligence for that
