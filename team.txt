@@ -9,3 +9,4 @@
 - attend lab in the morning and complete environment setup
 - complete lab session
 - respond to invite link from Ahsan
+- find out what merge is in git
