@@ -8,4 +8,4 @@
 - add collaborators to repo
 - attend lab in the morning and complete environment setup
 - complete lab session
-jm
+- respond to invite link from Ahsan
