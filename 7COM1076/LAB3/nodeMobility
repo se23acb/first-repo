@@ -1,0 +1,4 @@
+DEVICE NAME, START LOCATION, END LOCATION, START-STOP TIME, MOVING SPEED(min-max)
+iphone5, 15'115, 115'10, 10s-20s, min_v=1; max_v=5
+ipad, 20'130, 150'10, 30s-60s, min_v=5; max_v=10
+macbook, 140'10, 15'120, 25s-60s, min_v=2; max_v=7
