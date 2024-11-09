@@ -15,3 +15,21 @@
 
 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
 
+*** Goals ***
+
+Knowledge and experience;
+- wireshark I/O graph
+- throughput check
+- wireshark for adhoc networks
+
+Lecture to read;
+- adhoc 1 cont.
+- revise TEAM RESEARCH lecture 3
+- 
+
+Assignments;
+- critical analysis for RESP. TECH
+- clean up task 1 for WIRELESS
+- setup task 2
+
+
