@@ -33,3 +33,48 @@ Assignments;
 - setup task 2
 
 
+#!/usr/bin/python
+
+from mininet.net import Mininet
+from mininet.topo import SingleSwitchTopo
+from mininet.node import Controller
+from time import time, sleep
+import csv
+
+# Function to log throughput (in KB/s) to a CSV file
+def log_throughput(net, filename="throughput_log.csv", interval=1):
+    # Open CSV file to log data
+    with open(filename, 'a') as log_file:
+        writer = csv.writer(log_file)
+        writer.writerow(["Timestamp", "Host1_Inbound_KB/s", "Host1_Outbound_KB/s", "Host2_Inbound_KB/s", "Host2_Outbound_KB/s"])
+
+        # Start logging throughput every 'interval' seconds
+        while True:
+            timestamp = time()  # Current timestamp
+            # Get throughput statistics for each host
+            h1_in, h1_out = net.get('h1').intf('h1-eth0').status().split()[0:2]
+            h2_in, h2_out = net.get('h2').intf('h2-eth0').status().split()[0:2]
+
+            # Write the throughput data to CSV
+            writer.writerow([timestamp, h1_in, h1_out, h2_in, h2_out])
+            
+            sleep(interval)  # Sleep for 'interval' seconds before next log
+
+# Set up and run the Mininet network
+def run_mininet():
+    # Create the network with one switch and two hosts
+    topo = SingleSwitchTopo(k=2)
+    net = Mininet(topo=topo, controller=Controller)
+
+    # Start the network
+    net.start()
+
+    # Run throughput logging
+    log_throughput(net)
+
+    # Stop the network after logging
+    net.stop()
+
+# Run the script
+if __name__ == '__main__':
+    run_mininet()
