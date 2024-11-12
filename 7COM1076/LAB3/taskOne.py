@@ -15,7 +15,7 @@ def topology():
     ap3 = net.addAccessPoint('ap3', mac='00:00:00:00:00:02', ssid='AP3', mode='g', channel='1', position='75,135', band='5', range=35)
     ap4 = net.addAccessPoint('ap4', mac='00:00:00:00:00:03', ssid='AP4', mode='g', channel='1', position='110,50', band='5', range=50)
     ap5 = net.addAccessPoint('ap5', mac='00:00:00:00:00:04', ssid='AP5', mode='g', channel='1', position='160,50', band='5', range=50)
-    sta1 = net.addStation('iphone5', mac='00:00:00:00:00:10', ip='192.168.50.11/24', position='15,115', range=20, min_v=1, max_v=5)
+    sta1 = net.addStation('iphone', mac='00:00:00:00:00:10', ip='192.168.50.11/24', position='15,115', range=20, min_v=1, max_v=5)
     sta2 = net.addStation('ipad', mac='00:00:00:00:00:11', ip='192.168.50.12/24', position='20,130', range=20, min_v=5, max_v=10)
     sta3 = net.addStation('macbook', mac='00:00:00:00:00:12', ip='192.168.50.13/24', position='140,10', range=20, min_v=2, max_v=7)
     c0 = net.addController('c0')
