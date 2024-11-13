@@ -45,7 +45,7 @@ def topology():
     info("**starting network**\n")
     net.build()
     c0.start()
-    ap1.start([c0])
+    ap1.start([c0]) #start APs based on configurations from the controller
     ap2.start([c0])
     ap3.start([c0])
     ap4.start([c0])
