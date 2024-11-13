@@ -17,8 +17,8 @@ def topology():
     ap1 = net.addAccessPoint('AP1', mac='00:00:00:00:00:00', ssid='AP1', mode='g', channel='1', position='10,117.5', band='5', range=35)
     ap2 = net.addAccessPoint('AP2', mac='00:00:00:00:00:01', ssid='AP2', mode='g', channel='1', position='45,117.5', band='5', range=35)
     ap3 = net.addAccessPoint('AP3', mac='00:00:00:00:00:02', ssid='AP3', mode='g', channel='1', position='75,117.5', band='5', range=35)
-    ap4 = net.addAccessPoint('AP4', mac='00:00:00:00:00:03', ssid='AP4', mode='g', channel='1', position='110,50', band='5', range=50)
-    ap5 = net.addAccessPoint('AP5', mac='00:00:00:00:00:04', ssid='AP5', mode='g', channel='1', position='160,50', band='5', range=50)
+    ap4 = net.addAccessPoint('AP4', mac='00:00:00:00:00:03', ssid='AP4', mode='g', channel='1', position='120,50', band='5', range=50)
+    ap5 = net.addAccessPoint('AP5', mac='00:00:00:00:00:04', ssid='AP5', mode='g', channel='1', position='150,50', band='5', range=50)
     sta1 = net.addStation('STA1', mac='00:00:00:00:00:10', ip='192.168.50.11/24', position='15,115', range=20, min_v=1, max_v=5)
     sta2 = net.addStation('STA2', mac='00:00:00:00:00:11', ip='192.168.50.12/24', position='20,130', range=20, min_v=5, max_v=10)
     sta3 = net.addStation('STA3', mac='00:00:00:00:00:12', ip='192.168.50.13/24', position='140,10', range=20, min_v=2, max_v=7)
@@ -52,7 +52,7 @@ def topology():
     ap5.start([c0])
 
     info("**running CLI**\n")
-    CLI(net)
+    CLI(net) #allows interaction with network on a terminal
 
     info("**stopping network**\n")
     net.stop()
