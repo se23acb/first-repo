@@ -33,6 +33,7 @@ Assignments;
 - critical analysis for RESP. TECH
 - clean up task 1 for WIRELESS
 - setup task 2
+<<<<<<< HEAD
 This line of code adds an access point (ap1) to the Mininet-WiFi network with specific parameters:
 
 1. *ap1 = net.addAccessPoint('ap1', mac='00:11:22:33:44:01', ...*: This creates an access point named ap1 with the given MAC address. 
@@ -52,3 +53,5 @@ This line of code adds an access point (ap1) to the Mininet-WiFi network with sp
 8. *failMode="standalone"*: Sets the failure mode of the access point to "standalone", meaning the AP will continue to operate independently if it loses connection to a controller.
 
 This line effectively creates an access point ap1 with specific parameters that define its Wi-Fi settings, range, and fail-safe behavior.
+=======
+>>>>>>> 6492b38d698a9c64caea42977d0d5fd4da7b0085
