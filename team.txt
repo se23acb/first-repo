@@ -55,3 +55,63 @@ This line of code adds an access point (ap1) to the Mininet-WiFi network with sp
 This line effectively creates an access point ap1 with specific parameters that define its Wi-Fi settings, range, and fail-safe behavior.
 =======
 >>>>>>> 6492b38d698a9c64caea42977d0d5fd4da7b0085
+
+---adhoc network		 VS 	cellular network---
+- infrastructure-less		 VS	infracture based
+- multi-hop wireless links	 VS	single-hop(base station) wireless links
+- distributed administration	 VS	centralised administration
+- shared radio channel		 VS	guaranteed bandwidth
+- high cost & deployment time	 VS	quick & cost-effective deployment
+
+
+
+RESPONSIBLE TECHNOLOGY
+GDPR principle 1 : lawfulness, fairness, and transparency
+Personal data must be processed lawfully, fairly and in a transparent 
+manner in relation to the data subject (in this case customers of Hamid).
+They have the right to their information/data being processed in the 
+required manner (on legal basis).
+Hamid needs to be mindful of the requirements of first principle before 
+taking any action. 
+there should be consent from his clients
+
+wifi-adhoc cont.
+switches work on logic gates, closing and opening gates
+with router in addition, the 
+switches are faster than routers, due to direct operation on logic gates
+
+why SDN?
+traffic programming
+new traffic pattern
+monitoring, centralisation, security(access control)
+agility, heterogeneity, network automation
+internet favouring
+lower capital and operation expenditure
+mMTC
+CDN
+VoIP
+URLLC
+V2V
+V2X
+
+control plane?
+- logic plane behind operation of a device. only one device controlling the 
+entire route of the network
+- 
+
+data forwarding plane?
+- switching plane/part
+- responsible for the actual moving of data
+anchor points - abstraction of a database server (safe bandwidth)
+
+ONOS, ODL, Floodlight, NOX, POX, Ryu
+- configures networked devices
+- 
+
+control plane must express this behaviours
+- isolated, traffic prog.,
+
+network functions virtualisation
+- decoupling fns from dedicated hardware network devices into 
+software applications(simulation)
+- it can also have the functionality of SDN
