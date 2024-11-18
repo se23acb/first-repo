@@ -25,11 +25,11 @@ class MyTopo(Topo):
         Topo.__init__(self)
 
         # Add hosts and switches with VLAN support
-        h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='198.168.172.1/24')
-        h2 = self.addHost('h2', mac='00:00:00:00:00:02', ip='198.168.172.2/24')
-        SERVER1 = self.addHost('SERVER', mac='02:00:00:00:20:03', ip='20.0.0.2/8')
-        SERVER2= self.addHost('SERVER', mac='02:00:00:00:20:03', ip='40.0.0.2/8')
-        SERVER3= self.addHost('SERVER', mac='02:00:00:00:20:03', ip='60.0.0.2/8')
+        h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='192.168.10.11/24')
+        h2 = self.addHost('h2', mac='00:00:00:00:00:02', ip='192.168.10.12/24')
+        SERVER1 = self.addHost('SERVER1', mac='02:00:00:00:20:03', ip='20.0.0.2/8')
+        SERVER2 = self.addHost('SERVER2', mac='02:00:00:00:20:04', ip='40.0.0.2/8')
+        SERVER3 = self.addHost('SERVER3', mac='02:00:00:00:20:05', ip='60.0.0.2/8')
        
         # Add switches
         Switch1 = self.addSwitch('Switch1', cls=OVSSwitch)
@@ -51,10 +51,6 @@ class MyTopo(Topo):
         self.addLink(Switch1, SERVER1)
         self.addLink(Switch1, SERVER2)
         self.addLink(Switch1, SERVER3)
-
-      
-        
-	
          
 
 topos = { 'mytopo': (lambda: MyTopo()) }
