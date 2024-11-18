@@ -24,10 +24,10 @@ def topology(args):
     info("*** Creating links\n")
     # testing 'batman_adv', 'batmand', 'olsrd' manet protocol
     #TODO Add links and plot graph
-    net.plotGraph(min_x=-20, min_y=-40, max_x=120, max_y=100)
-    net.addLink(sta1, cls=adhoc, intf='STA1-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='olsrd')
-    net.addLink(sta2, cls=adhoc, intf='STA2-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='olsrd')
-    net.addLink(sta3, cls=adhoc, intf='STA3-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='olsrd')
+    net.plotGraph(min_x=-20, min_y=-40, max_x=120, max_y=90)
+    net.addLink(sta1, cls=adhoc, intf='STA1-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='batman_adv')
+    net.addLink(sta2, cls=adhoc, intf='STA2-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='batman_adv')
+    net.addLink(sta3, cls=adhoc, intf='STA3-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='batman_adv')
     
     info("*** Starting network\n")
     net.build()

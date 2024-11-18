@@ -25,9 +25,9 @@ class MyTopo(Topo):
         Topo.__init__(self)
 
         # Add hosts and switches with VLAN support
-        h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='192.168.19.1/24', cls=VLANHost, vlan=200)
+        h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='192.168.19.1/24')
         h2 = self.addHost('h2', mac='00:00:00:00:00:02', ip='192.168.19.2/24', cls=VLANHost, vlan=100)
-        h3 = self.addHost('h3', mac='00:00:00:00:00:03', ip='192.168.19.3/24', cls=VLANHost, vlan=200)
+        h3 = self.addHost('h3', mac='00:00:00:00:00:03', ip='192.168.19.3/24')
         h4 = self.addHost('h4', mac='00:00:00:00:00:04', ip='192.168.19.4/24', cls=VLANHost, vlan=100)
         SERVER = self.addHost('SERVER', mac='00:00:00:00:20:00', ip='192.168.19.5/24')
         CLIENT = self.addHost('CLIENT', mac='00:00:00:00:20:01', ip='192.168.19.6/24')
