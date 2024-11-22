@@ -25,29 +25,33 @@ class MyTopo(Topo):
         Topo.__init__(self)
 
         # Add hosts and switches with VLAN support
-        h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='192.168.19.1/24')
-        h2 = self.addHost('h2', mac='00:00:00:00:00:02', ip='192.168.19.2/24', cls=VLANHost, vlan=100)
-        h3 = self.addHost('h3', mac='00:00:00:00:00:03', ip='192.168.19.3/24')
-        h4 = self.addHost('h4', mac='00:00:00:00:00:04', ip='192.168.19.4/24', cls=VLANHost, vlan=100)
-        SERVER = self.addHost('SERVER', mac='00:00:00:00:20:00', ip='192.168.19.5/24')
-        CLIENT = self.addHost('CLIENT', mac='00:00:00:00:20:01', ip='192.168.19.6/24')
-         
+        h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='192.168.20.1/24')
+        h2 = self.addHost('h2', mac='00:00:00:00:00:02', ip='192.168.20.2/24')
+        
+        SERVER1 = self.addHost('SVR1', mac='00:00:00:00:20:00', ip='20.10.0.1/8')
+        SERVER2 = self.addHost('SVR2', mac='00:00:00:00:20:01', ip='40.10.0.2/8')
+        SERVER3 = self.addHost('SVR3', mac='00:00:00:00:20:02', ip='60.10.0.3/8')
+        
         # Add switches
         Switch1 = self.addSwitch('Switch1', cls=OVSSwitch)
         Switch2 = self.addSwitch('Switch2', cls=OVSSwitch)
         Switch3 = self.addSwitch('Switch3', cls=OVSSwitch)
         Switch4 = self.addSwitch('Switch4', cls=OVSSwitch)
+        Switch5 = self.addSwitch('Switch5', cls=OVSSwitch)
+
 
         # Add links
-        self.addLink(h1, Switch1)
-        self.addLink(h2, Switch1)
-        self.addLink(h3, Switch1)
-        self.addLink(SERVER, Switch1)
+        self.addLink(h1, Switch4)
+        self.addLink(h2, Switch5)
+        self.addLink(SERVER1, Switch1)
+        self.addLink(SERVER2, Switch1)
+        self.addLink(SERVER3, Switch1)
         self.addLink(Switch1, Switch2)
         self.addLink(Switch1, Switch3)
         self.addLink(Switch2, Switch4)
+        self.addLink(Switch2, Switch5)
         self.addLink(Switch3, Switch4)
-        self.addLink(h4, Switch4)
-        self.addLink(CLIENT, Switch4)
+        self.addLink(Switch3, Switch5)
+        self.addLink(Switch4, Switch5)
 
 topos = { 'mytopo': (lambda: MyTopo()) }
