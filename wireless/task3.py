@@ -28,11 +28,11 @@ class MyTopo(Topo):
         h1 = self.addHost('h1', mac='00:00:00:00:00:01', ip='192.168.20.1/24')
         h2 = self.addHost('h2', mac='00:00:00:00:00:02', ip='192.168.20.2/24')
         
-        SERVER1 = self.addHost('SVR1', mac='00:00:00:00:20:00', ip='20.10.0.1/8')
-        SERVER2 = self.addHost('SVR2', mac='00:00:00:00:20:01', ip='40.10.0.2/8')
-        SERVER3 = self.addHost('SVR3', mac='00:00:00:00:20:02', ip='60.10.0.3/8')
+        SERVER1 = self.addHost('SVR1', mac='00:00:00:00:20:00', ip='20.0.0.2/8')
+        SERVER2 = self.addHost('SVR2', mac='00:00:00:00:20:01', ip='40.0.0.2/8')
+        SERVER3 = self.addHost('SVR3', mac='00:00:00:00:20:02', ip='60.0.0.2/8')
         
-        # Add switches
+        # Add switches 
         Switch1 = self.addSwitch('Switch1', cls=OVSSwitch)
         Switch2 = self.addSwitch('Switch2', cls=OVSSwitch)
         Switch3 = self.addSwitch('Switch3', cls=OVSSwitch)
