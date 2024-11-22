@@ -2,6 +2,7 @@ library(readr)
 
 #import dataset
 match_stat <- read.csv('/Users/ekow/Desktop/CN&SS/team research and dev/match-stat.csv')
+
 print(match_stat)
 summary(match_stat)
 #length(rows) = 113514
@@ -19,7 +20,7 @@ match_stat_clean <- match_stat[!is.na(match_stat$HST),]
 
 #drop "D" value from independent variable
 match_stat_clean <- match_stat_clean[match_stat_clean$FTR != "D", ,drop = FALSE]
-head(match_stat_clean, 100)
+head(match_stat_clean, 10)
 
 #histogram of dependent variable
 hist(match_stat_clean$HST, breaks = 25, xlim = c(-2, 25), ylim = c(0, 7000), col = "lightgreen")
@@ -33,3 +34,8 @@ curve(dnorm(x, mean = m_hst, sd = sd_hst) * length(match_stat_clean$HST) * diff(
 
 #boxplot for differences in average
 boxplot(match_stat_clean$HST ~ match_stat_clean$FTR, col = "lightyellow", pch = 20)
+
+#wilcox.test
+ftr <- match_stat_clean$FTR
+hst <- match_stat_clean$HST
+wilcox.test(ftr ~ hst)
