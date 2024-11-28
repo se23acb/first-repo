@@ -1,0 +1,15 @@
+task3
+  connect new building with old building at UH
+  old building has servers
+  attain hosts connectivity to all servers
+**configure route on host in linux
+- ip route add default via <gateway> dev <interface> - for all networks
+- ip route add <network>/<netmask> via <gateway> dev <interface> - specify network
+**UDP communication
+- iperf -s -u -p <port> -i 1 -: listen on server side
+- iperf -c <srvr-add> -u -p <port> -t <time> -b <bandwidth> -: connect on client
+**analysis
+- observe UDP comm for 600s at 100Mb/sec port=5566
+- study jitter statistic on client side
+- identify consistency or not, meaning for UDP
+- iperf command for the test

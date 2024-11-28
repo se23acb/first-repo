@@ -24,11 +24,11 @@ class MyTopo(Topo):
 	        # Initialize topology
 	        Topo.__init__(self)
 
-	        h1 = self.addHost( 'h1', mac='00:00:00:00:00:01', ip='192.168.20.1/24' )
-	        h2 = self.addHost( 'h2', mac='00:00:00:00:00:02', ip='192.168.20.2/24' )
-	        SERVER1 = self.addHost( 'SVR1', mac='00:00:00:00:20:00', ip='20.0.0.2/8' )
-	        SERVER2 = self.addHost( 'SVR2', mac='00:00:00:00:20:01', ip='40.0.0.2/8' )
-	        SERVER3 = self.addHost( 'SVR3', mac='00:00:00:00:20:02', ip='60.0.0.2/8' )
+	        h1 = self.addHost( 'H1', mac='00:00:00:00:15:98', ip='192.170.50.11/24' )
+	        h2 = self.addHost( 'H2', mac='00:00:00:00:15:99', ip='192.170.50.12/24' )
+	        SERVER1 = self.addHost( 'Sv1', mac='00:00:00:00:16:00', ip='20.0.0.2/8' )
+	        SERVER2 = self.addHost( 'Sv2', mac='00:00:00:00:16:01', ip='40.0.0.2/8' )
+	        SERVER3 = self.addHost( 'Sv3', mac='00:00:00:00:16:02', ip='60.0.0.2/8' )
 
 	        Switch1 = self.addSwitch( 'Switch1', cls=OVSSwitch )
 	        Switch2 = self.addSwitch( 'Switch2', cls=OVSSwitch )
