@@ -13,3 +13,7 @@ task3
 - study jitter statistic on client side
 - identify consistency or not, meaning for UDP
 - iperf command for the test
+
+task4
+  test multicast video streaming facility in the new building
+  
