@@ -1,3 +1,20 @@
+task1
+  wireless network design for a department floor
+  consist 
+task2
+  setup adhoc network for use in emergency scenario
+  3 stations( A, B, C )
+**configure wifi nodes with adhoc protocol
+- tested VoIP between close stations with various manet protocols;
+> batmand
+> batman_adv
+> olsrd
+**analysis
+- average bandwidth of network under each protocol
+- behaviours: similar/different
+- hidden node problem: node A & C are not aware of each other, but B is aware of bothe A & 
+C
+
 task3
   connect new building with old building at UH
   old building has servers
