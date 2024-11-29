@@ -24,4 +24,5 @@ task4
 **analysis
 - devices in multicast group should be able to stream the video from source
 - other devices not in multicast group cannot stream video output
-
+- protocol underlying video stream( Real-Time Transport Protocol ): a form of UDP connection.
+- 
