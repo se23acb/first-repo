@@ -13,10 +13,10 @@ class MyTopo( Topo ):
         Topo.__init__( self )
 
         # Add hosts and switches TODO
-        h1 = self.addHost('h1', ip='10.10.10.10/8')
-        h2 = self.addHost('h2', ip='10.10.10.11/8')
-        h3 = self.addHost('h3', ip='10.10.10.12/8')
-        h4 = self.addHost('vs', ip='10.10.10.20/8')
+        h1 = self.addHost('H1', ip='50.10.10.10/8')
+        h2 = self.addHost('H2', ip='50.10.10.11/8')
+        h3 = self.addHost('H3', ip='50.10.10.12/8')
+        h4 = self.addHost('VS', ip='50.10.10.20/8')
         s1 = self.addSwitch('s1')
         s2 = self.addSwitch('s2')
 

@@ -16,4 +16,12 @@ task3
 
 task4
   test multicast video streaming facility in the new building
-  
+  achieve casting to specific host from Video Source
+  implement multicast group
+**multicast group configuration
+- echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_braodcasts
+- ip route add <multicast add>/<netmask> dev <interface>
+**analysis
+- devices in multicast group should be able to stream the video from source
+- other devices not in multicast group cannot stream video output
+
