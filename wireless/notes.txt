@@ -1,6 +1,7 @@
 task1
   wireless network design for a department floor
-  consist 
+  consist five access points and three stations
+  simulate mobility, observe node handoff 
 task2
   setup adhoc network for use in emergency scenario
   3 stations( A, B, C )
