@@ -1,7 +1,10 @@
 task1
   wireless network design for a department floor
-  consist five access points and three stations
-  simulate mobility, observe node handoff 
+  consist five access points and three stations, aunthentication for AP access
+  simulate mobility, observe node handoff from one AP to another
+  full ping connectivity between all stations
+  describe wireless networks and medium access
+
 task2
   setup adhoc network for use in emergency scenario
   3 stations( A, B, C )
@@ -11,6 +14,7 @@ task2
 > batman_adv
 > olsrd
 **analysis
+- Session Initiation Protocol( SIP ): for voice/video call over internet
 - average bandwidth of network under each protocol
 - behaviours: similar/different
 - hidden node problem: node A & C are not aware of each other, but B is aware of bothe A & 
