@@ -5,13 +5,16 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{listings}
 \lstset{breaklines=true}
-\graphicspath{{./images/}}
+\graphicspath{{\string~/Desktop/git/first-repo/wireless/report/snapshots}}
 \usepackage[letterpaper, top=1in, bottom=1.1in, right=1in, left=1in]{geometry}
 \renewcommand{\baselinestretch}{1.15} %line spacing
+\usepackage{tocloft}
+\usepackage{cite}
+
 
 
 \title{University of Hertfordshire\\School of Physics, Engineering and Computer Science}
-\author{20070088}
+\author{20070088} 
 \date{\today}
 
 \begin{document}
@@ -41,7 +44,7 @@ Since the conception and realisation of the Advanced Research Projects Agency Ne
 Software-Defined Networking (SDN) is a computer technology that brings a change to the limitations of current computer networks infrastructure. SDN\cite{6587999} decouples the control and data plane of a network leaving the switch with the simple function of forwarding packets based on a set of rules. By doing so, it breaks the vertical integration of conventional networks as the control logic is separated from the data plane i.e. the underlying switches and routers that forward the traffic\cite{6994333}. To make possible the communication between the controller and the network devices, OpenFlow\cite{6587999} is used in conjunction with SDN. OpenFlow standardises the communication between the switches and the software-based controller in an SDN architecture. Researchers found it difficult to test out new ideas in current hardware because the source code of the software running on the network device cannot be modified making the infrastructure 'rigid'. As a result, a standardised protocol( eg. OpenFlow ) to control flow table of switches through software was provided by identifying common features in the flow tables of the ethernet switches\cite{6587999}.\\The figures below show a comparison of the traditional network and SDN network and an overview of the SDN architecture.\\
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.7\linewidth]{images/SDN.png}
+        \includegraphics[width=0.7\linewidth]{SDN.png}
         \caption{Traditional Networks vs SDN Networks}
         \label{SDN}
     \end{figure}
@@ -49,7 +52,7 @@ Software-Defined Networking (SDN) is a computer technology that brings a change 
     \newpage
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.5\linewidth]{images/SDN1.png}
+        \includegraphics[width=0.5\linewidth]{SDN1.png}
         \caption{SDN Architecture}
         \label{SDN}
     \end{figure} 
@@ -69,12 +72,12 @@ The figures below show the outline of the floor-plan in context and position of 
     \begin{figure}[h]
         \centering
         \minipage{0.5\textwidth}
-        \includegraphics[width=0.9\linewidth]{images/floorplan1.png}
+        \includegraphics[width=0.9\linewidth]{floorplan1.png}
         \caption{Floor-plan in context}
         \label{FP}
         \endminipage
         \minipage{0.4\textwidth}
-        \includegraphics[width=0.9\linewidth]{images/floorplan.png}
+        \includegraphics[width=0.9\linewidth]{floorplan.png}
         \caption{Floor-plan with infrastructure}
         \label{FP-1}
         \endminipage
@@ -108,9 +111,9 @@ The figures below show the outline of the floor-plan in context and position of 
         \hline
         DEVICE & START LOCATION & END LOCATION & START-STOP TIME & MOVING SPEED(min-max)  \\
         \hline
-        STA1 & 15,115 & 115,10 & 10s-20s & min_v=1, max_v=5 \\
-        STA2 & 20,130 & 150,10 & 30s-60s & min_v=5, max_v=10 \\
-        STA3 & 140,10 & 15,120 & 25s-60s & min_v=2, max_v=7 \\
+        STA1 & 15,115 & 115,10 & 10s-20s & \texttt{min\_v=1, max\_v=5} \\
+        STA2 & 20,130 & 150,10 & 30s-60s & \texttt{min\_v=5, max\_v=10} \\
+        STA3 & 140,10 & 15,120 & 25s-60s & \texttt{min\_v=2, max\_v=7 }\\
         \hline
         \end{tabular}
         \caption{Mobility of the Nodes}
@@ -122,26 +125,26 @@ The figures below show the outline of the floor-plan in context and position of 
 \subsection{Results}
     \begin{figure}[h]
         \minipage{0.5\textwidth}
-        \includegraphics[width=0.9\linewidth]{images/beforeMobility.png}
+        \includegraphics[width=0.9\linewidth]{beforeMobility.png}
         \caption{Prior Mobility}
         \label{MininetGUI}
         \endminipage
         \minipage{0.5\textwidth}
-        \includegraphics[width=0.9\linewidth]{images/afterMobility.png}
+        \includegraphics[width=0.9\linewidth]{afterMobility.png}
         \caption{After Mobility}
         \label{MininetGUI}
         \endminipage\vspace{10pt}
         \minipage{0.5\textwidth}
-        \includegraphics[width=0.9\linewidth]{images/sta1-iwconfig.png}
-        \includegraphics[width=0.9\linewidth]{images/sta2-iwconfig.png}
-        \includegraphics[width=0.9\linewidth]{images/sta3-iwconfig.png}
+        \includegraphics[width=0.9\linewidth]{sta1.png}
+        \includegraphics[width=0.9\linewidth]{sta2.png}
+        \includegraphics[width=0.9\linewidth]{sta3.png}
         \caption{APs connected after mobility}
         \label{MininetCLI}
         \endminipage\vspace{10pt}
         \minipage{0.5\textwidth}
-        \includegraphics[width=0.9\linewidth]{images/ping1.png}
-        \includegraphics[width=0.9\linewidth]{images/ping2.png}
-        \includegraphics[width=0.9\linewidth]{images/ping3.png}
+        \includegraphics[width=0.9\linewidth]{ping1.png}
+        \includegraphics[width=0.9\linewidth]{ping2.png}
+        \includegraphics[width=0.9\linewidth]{ping3.png}
         \caption{Successful Connectivity}
         \label{MininetCLI}
         \endminipage
@@ -152,7 +155,7 @@ The figures below show the outline of the floor-plan in context and position of 
 \section{Task 2 - Adhoc Network Simulation}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.4\linewidth]{images/adhoc.png}
+        \includegraphics[width=0.4\linewidth]{adhoc.png}
         \caption{Adhoc Network with 3 Nodes}
         \label{fig:adhocNetwork}
     \end{figure}
@@ -173,22 +176,22 @@ The figures below show the outline of the floor-plan in context and position of 
 \subsection{Results}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.7\linewidth]{images/batman_adv1.png} \\
-        \includegraphics[width=0.7\linewidth]{images/batman_adv.png}
+        \includegraphics[width=0.7\linewidth]{batman_adv1.png} \\
+        \includegraphics[width=0.7\linewidth]{batman_adv.png}
         \caption{Throughput using BATMAN\_ADV protocol}
         \label{fig:adhocProto}
     \end{figure}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.7\linewidth]{images/batmand1.png} \\
-        \includegraphics[width=0.7\linewidth]{images/batmand.png}
+        \includegraphics[width=0.7\linewidth]{batmand1.png} \\
+        \includegraphics[width=0.7\linewidth]{batmand.png}
         \caption{Throughput using BATMAND protocol}
         \label{fig:adhocProto}
     \end{figure}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.7\linewidth]{images/olsrd1.png} \\
-        \includegraphics[width=0.7\linewidth]{images/olsrd.png}
+        \includegraphics[width=0.7\linewidth]{olsrd1.png} \\
+        \includegraphics[width=0.7\linewidth]{olsrd.png}
         \caption{Throughput using OLSRD protocol}
         \label{fig:adhocProto}
     \end{figure}
@@ -216,7 +219,7 @@ The figures below show the outline of the floor-plan in context and position of 
 
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.8\linewidth]{images/t3-topo.png}
+        \includegraphics[width=0.8\linewidth]{t3-topo.png}
         \caption{Building Plan}
         \label{fig:floor-plan}
     \end{figure}
@@ -225,8 +228,8 @@ The figures below show the outline of the floor-plan in context and position of 
         After setting up and running the network on mininet and configuring static routes to various networks on each host, we check the connectivity of hosts in the design. The following images are results from a 'pingall' command in mininet and server-client UDP connection for 600s at a bandwidth of 100Mbsec.
         \begin{figure}[h]
             \centering
-            \includegraphics[width=0.5\linewidth]{images/t3-pingall.png}
-            \includegraphics[width=0.9\linewidth]{images/t3-udp.png}
+            \includegraphics[width=0.5\linewidth]{t3-pingall.png}
+            \includegraphics[width=0.9\linewidth]{t3-udp.png}
             \caption{Full ping connectivity \& Server-Client UDP connection}
             \label{fig:task3}
         \end{figure}
@@ -251,17 +254,17 @@ The figures below show the outline of the floor-plan in context and position of 
     \end{table}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.7\linewidth]{images/mc-vs.png}
-        \includegraphics[width=0.7\linewidth]{images/mc-h1.png}
-        \includegraphics[width=0.7\linewidth]{images/mc-h2.png}
+        \includegraphics[width=0.7\linewidth]{mc-vs.png}
+        \includegraphics[width=0.7\linewidth]{mc-h1.png}
+        \includegraphics[width=0.7\linewidth]{mc-h2.png}
         \caption{Activating multicast for required nodes}
         \label{fig:activate multicast}
     \end{figure}
     \begin{figure}[h]
-        \includegraphics[width=0.5\linewidth]{images/vs-1.png}
-        \includegraphics[width=0.5\linewidth]{images/vs-2.png}
-        \includegraphics[width=0.5\linewidth]{images/vs-3.png}
-        \includegraphics[width=0.5\linewidth]{images/vs-4.png}
+        \includegraphics[width=0.5\linewidth]{vs-1.png}
+        \includegraphics[width=0.5\linewidth]{vs-2.png}
+        \includegraphics[width=0.5\linewidth]{vs-3.png}
+        \includegraphics[width=0.5\linewidth]{vs-4.png}
         \caption{Steps for multicast video streaming}
         \label{fig:enter-label}
     \end{figure}
@@ -273,7 +276,7 @@ The figures below show the outline of the floor-plan in context and position of 
 \newpage
 \section{References}
 \bibliographystyle{plain}
-\bibliography{refs}
+\bibliography{references}
 
 \newpage
 \section{Appendix}
