@@ -115,3 +115,17 @@ network functions virtualisation
 - decoupling fns from dedicated hardware network devices into 
 software applications(simulation)
 - it can also have the functionality of SDN
+
+
+RESPONSIBLE TECHNOLOGY
+- Law( given or set of rules by higher authority, something we are bound by within society )
+- Ethics( concerned about right and wrong thing to do in a given situation eg. should we do this?, what impact on society might occur )
+- Professionalism( consider how law and ethics apply to you in your field of work )
+
+ Environmental sustainability( influence and impact we have on the society/environment )
+ Accessibility( access by everyone regardless of their disability is an essential aspect, not excluding, making it an ethical and legal concern )
+	disabilty( interaction between an individual's mental or physical impairment and their environment including technological ) models;
+		medical model( Equality Act 2010; any physical/mental impairment that affects a person's ability to do normal daily activities )
+		social model( concerned with how a society is organised impacts the extent to which one may be disabled, not a disability of an individual )
+		biopsychosocial model( concerned with how physical/mental interaction with their environment makes them disable )
+		human-rights model( continuum of human traits/capacities, persons with disability have same human-rights as any other person )  
