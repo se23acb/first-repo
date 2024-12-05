@@ -13,15 +13,18 @@
 
 
 
-\title{University of Hertfordshire\\School of Physics, Engineering and Computer Science}
-\author{20070088} 
+\title{7COM1076-0901-2024 - Wireless, Mobile and Multimedia Networking}
+\author{22076082} 
 \date{\today}
 
 \begin{document}
 \maketitle
+\vspace{70pt}
 \begin{center}
-	\large{Wireless Mobile and Multimedia Networking} \\[100pt]
-	\huge{Software Defined Networks(SDN) Emulation with Mininet and OpenFlow }
+	\huge{Software Defined Networking(SDN) emulation with Mininet and OpenFlow} \\ [100pt]
+	\vspace{70pt}
+	\large{University of Hertfordshire} \\
+	\large{Hatfield}
 \end{center}
 
 \newpage
@@ -67,7 +70,7 @@ For this experiment, we utilise a microcomputer MacBook with the following speci
 In this microcomputer, under the management of VirtualBox, we installed the following guest operating systems: Mininet emulator version 2.0 on Linux operating system Ubuntu 64bits with 4GB of RAM; ONOS controller version ??.
 
 \section{Task 1 - WiFi Network Simulation}
-The first experiment will simulate a wireless network topology for a given department floor. The scenario will consist of five access points spread out strategically within the floor to make space for a signal dead-zone( red-spotted ) and three stations to mimic mobile nodes which will engage in mobility actions to emulate real-life instance of networks. During this work, we utilise a feature known as Mininet-GUI to view and position APs and nodes/stations and also observe mobile node association and handoff to access point, authentication of access point, full connectivity between all nodes in the network and briefly understand communication channels are used in a wireless network. \\
+In this task, we emulate a nwireless network designed for a floor in the new building. For this purpose, we emulate 3 stations. The stations may represent a smart hand-held device which can vary from smartphone to a laptop, UE or to any WiFi compatible device. The stations carry a Class C private IP address of the same network. APs are connected using a physical link facilitating a linear topology. The new building would create a minimalistic noise threshold of -91dBm. The five access points are spread out strategically within the floor to make space for a signal dead-zone( red-spotted ) and 3 stations will be in mobility state to emulate real-life network scenario. \\ A python script will contain the code for this configuration and upon completion, we start the network using Mininet on a Linux terminal and view the network emulation on the Mininet-GUI feature while having to observe access point association, full connectivity between all nodes in the network on the Mininet CLI, and briefly understand how communication channels are used in a wireless network. \\\\
 The figures below show the outline of the floor-plan in context and position of APs and  stations in the design.
     	\begin{figure}[h]
         		\centering
@@ -84,10 +87,9 @@ The figures below show the outline of the floor-plan in context and position of 
     	\end{figure} 
 	
 \subsection{Design and Configuration}
-Both figures show the outline of the floor-plan in context with the dimensions included on fig. 3 while fig. 4 is a snapshot of the Mininet GUI with the positions of the stations and access points and the range of coverage of all devices. The 'red-spotted' zone as seen remains free of WiFi signals as required in the design. \\ Table 1 contains the details of stations and access points which are used for the network configuration in a python script. All three stations share the same network address and have full authenticated access to each access points. \\ The access points are positioned strategically and linked serially to ensure the required zones within the floor have strong WiFi coverage and support full connectivity for connected nodes or stations. To emulate real networking scenario, mobility is included for the stations, details are shown in Table 2. We get to simulate a mobile node's association and handoff operation by access points. Different mobility attributes in terms of mobile node speed of movement are specified for each station. \\ The procedure was done in the python code for the network configuration which is stated in the appendix section of this document.
+Both figures show the outline of the floor-plan in context with the dimensions included on fig. 3 while fig. 4 is a snapshot of the Mininet GUI with the positions of the stations and access points and the range of coverage of all devices. The 'red-spotted' zone as seen remains free of WiFi signals as required in the design. \\ Table 1 contains the details of stations and access points which are used for the network configuration in a python script. All three stations share the same network address and have full authenticated access to each access points. \\ The access points are positioned strategically and linked serially to ensure the required zones within the floor have strong WiFi coverage and support full connectivity for connected nodes or stations. To emulate real networking scenario, mobility is included for the stations, details are shown in Table 2. Mobility attributes in terms of velocity or speed of motion for each station are specified. The mobility attributes are added to the python code for the network configuration which is captured in the appendix section of this document.
 
 
-\newpage
   	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -365,7 +367,7 @@ if __name__ == '__main__':
     topology()
 \end{lstlisting}
 
-\newpage
+
 \section{Task 2 code}
 \begin{lstlisting}
 import sys
@@ -409,7 +411,6 @@ if __name__ == '__main__':
     topology(sys.argv)
 \end{lstlisting}
 
-\newpage
 \section{Task 3 code}
 \begin{lstlisting}
 from mininet.topo import Topo  
