@@ -17,8 +17,23 @@ task2
 - Session Initiation Protocol( SIP ): for voice/video call over internet
 - average bandwidth of network under each protocol
 - behaviours: similar/different
-- hidden node problem: node A & C are not aware of each other, but B is aware of bothe A & 
-C
+- hidden node problem: node A & C are not aware of each other, but B is aware of bothe A & C
+\minipage{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{batman_adv-srv.png}
+		\endminipage
+        		\minipage{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{batman_adv-cli.png}
+		\endminipage \\
+\minipage{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.7\linewidth]{batmand-srv.png}
+		\endminipage
+        		\minipage{0.5\textwidth}
+			\centering
+			\includegraphics[width=0.7\linewidth]{batmand-cli.png}
+		\endminipage \\
 
 task3
   connect new building with old building at UH

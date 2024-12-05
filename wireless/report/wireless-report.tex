@@ -11,8 +11,6 @@
 \usepackage{tocloft}
 \usepackage{cite}
 
-
-
 \title{7COM1076-0901-2024 - Wireless, Mobile and Multimedia Networking}
 \author{22076082} 
 \date{\today}
@@ -38,11 +36,9 @@
 The world has been considered a digital society with the intervention of the Internet. These computer networks form a strong foundation in the manner we access information, communicate, and handle data, providing convenience in various aspects of life. This technology relies strongly on the operations of traditional IP networks and despite being widely adopted, they do get complex and hard to manage in terms of configuration according to predefined policies and reconfiguration in response to load, faults, and changes. On top of that, conventional networks are vertically integrated(the control plane and data plane are bundled together). Emerging technologies such as Software Defined Networking (SDN) provides a convenient approach in handling computer networks. SDN brings a proposed paradigm which changes state of affairs by separating the network's control logic from the data plane. This approach enables centralisation of network control and ability to program the network improving network availability, scalability, and management. This report presents a practical survey on SDN. It starts by utilising concepts of SDN in both a wireless and wired network scenario, an Ad-Hoc Network for emergency scenario, and multi-cast video streaming. We measure and test out performance metrics such as throughput and jitter for communications under Session Initiation Protocol (SIP), connection-less communication in server and client scenario. All activities are carried out on a single machine running Linux with underlying applications such as Mininet, Open Network Operating System(ONOS) and Wireshark.
 \end{abstract}
 
-
 \newpage
 \section{Introduction}
 Since the conception and realisation of the Advanced Research Projects Agency Networks(ARPANET)\cite{5432117}, developments and innovations in computer networks has seen a significant growth in size and requirements and navigating traditional network switches has become a challenge. In traditional networks, the control plane operation has a distributed infrastructure that requires protocols such as OSPF, STP, EIGRP, to operate independently on network devices. The forwarding decision which is the process of determining how to send a packet from one device (such as a router or switch) to another device within a network, based on certain criteria is performed by these network devices. This decision is made based on the information available in the routing table (for routers) or the switching table (MAC table) (for switches). It is accepted that the network devices connect but there is no centralised machine to manage or summarise the whole network\cite{Haji_Zeebaree_Saeed_Ameen_Shukur_Omar_Sadeeq_Ageed_Ibrahim_Yasin_2021}. Also, the distributed control and transport protocols running inside routers and switches makes it complex to express desired high-level network policies since network operators must configure each individual network device separately\cite{6994333}. This main issue is rectified by SDN introducing the needed network control, flexibility, and programmability.\\
-
 \subsection{Software-Defined Networking (SDN) and OpenFlow} 
 Software-Defined Networking (SDN) is a computer technology that brings a change to the limitations of current computer networks infrastructure. SDN\cite{6587999} decouples the control and data plane of a network leaving the switch with the simple function of forwarding packets based on a set of rules. By doing so, it breaks the vertical integration of conventional networks as the control logic is separated from the data plane i.e. the underlying switches and routers that forward the traffic\cite{6994333}. To make possible the communication between the controller and the network devices, OpenFlow\cite{6587999} is used in conjunction with SDN. OpenFlow standardises the communication between the switches and the software-based controller in an SDN architecture. Researchers found it difficult to test out new ideas in current hardware because the source code of the software running on the network device cannot be modified making the infrastructure 'rigid'. As a result, a standardised protocol( eg. OpenFlow ) to control flow table of switches through software was provided by identifying common features in the flow tables of the ethernet switches\cite{6587999}.\\The figures below show a comparison of the traditional network and SDN network and an overview of the SDN architecture.\\
 	\begin{figure}[h]
@@ -61,19 +57,17 @@ Software-Defined Networking (SDN) is a computer technology that brings a change 
     	\end{figure} 
 The underlying network applications or packages which are the softwares for the logical operations within the network are installed and activated on the SDN controller. These applications are known as the Northbound APIs or interface as shown in fig.2. The Southbound interface consist the protocols that facilitates communication between the remote SDN controller and the network devices, for example the OpenFlow\cite{10220519} protocol. Examples of such network applications can be STP, routing algorithms, and access control and examples of a SDN controller can be the ONOS controller. The prospect of such architecture is noticed in terms of ease of network management, programmability and openness to innovations and virtualisation.
 \subsection{Mininet}
-For the scope of this paper, we aim to determine and investigate the convenience of SDN networks in a variety of network scenarios and requirements. To test out the efficiency, reliabilty, cost, and flexibility of the SDN approach in our network designs, the experiment will be carried out on a network emulators known as Mininet. It is one of the many network simulation tools( another example is OMNETT++ ) that have been developed to virtualise and test network performance\cite{10220519, Haji_Zeebaree_Saeed_Ameen_Shukur_Omar_Sadeeq_Ageed_Ibrahim_Yasin_2021}. \\\\ Mininet\cite{6860404} provides a system that allows rapid prototyping of large networks and creates scalable software-defined networks using lightweight virtualisation mechanism. This alleviates the downside of conventional networking by providing a centralised view of the network and paves the way for more controllability and managing how networks should operate regardless of their size or their complexity. \\\\
+For the scope of this paper, we aim to determine and investigate the convenience of SDN networks in a variety of network scenarios and requirements. To test out the efficiency, reliability, cost, and flexibility of the SDN approach in our network designs, the experiment will be carried out on a network emulators known as Mininet. It is one of the many network simulation tools( another example is OMNETT++ ) that have been developed to virtualise and test network performance\cite{10220519, Haji_Zeebaree_Saeed_Ameen_Shukur_Omar_Sadeeq_Ageed_Ibrahim_Yasin_2021}. \\\\ Mininet\cite{6860404} provides a system that allows rapid prototyping of large networks and creates scalable software-defined networks using lightweight virtualisation mechanism. This alleviates the downside of conventional networking by providing a centralised view of the network and paves the way for more controllability and managing how networks should operate regardless of their size or their complexity. \\\\
 Since research on this topic is still in progress, there are not many devices such as routers and switches that implement SDN functionalities, moreover, the existing ones are very expensive. Thus, in order to enable researchers to perform experiments and test novel features of this new paradigm in practice at a low financial cost, one solution is to use virtual network emulators such as Mininet. It creates SDN elements, customise them, and share them among other networks and perform interactions\cite{6860404}.
-
 \newpage
 \subsection{Emulation environment specifications}
-For this experiment, we utilise a microcomputer MacBook with the following specifications: Processor 3 GHz 6-Core Intel Core i5, 16GB of ram, running the macOS 15.1, and VirtualBox Oracle VM version 7.1.2.
+For this experiment, we utilise a microcomputer iMac with the following specifications: Processor 3 GHz 6-Core Intel Core i5, 16GB of ram, running the macOS 15.1, and VirtualBox Oracle VM version 7.1.2.
 In this microcomputer, under the management of VirtualBox, we installed the following guest operating systems: Mininet emulator version 2.0 on Linux operating system Ubuntu 64bits with 4GB of RAM; ONOS controller version ??.
-
 \section{Task 1 - WiFi Network Simulation}
-In this task, we emulate a nwireless network designed for a floor in the new building. For this purpose, we emulate 3 stations. The stations may represent a smart hand-held device which can vary from smartphone to a laptop, UE or to any WiFi compatible device. The stations carry a Class C private IP address of the same network. APs are connected using a physical link facilitating a linear topology. The new building would create a minimalistic noise threshold of -91dBm. The five access points are spread out strategically within the floor to make space for a signal dead-zone( red-spotted ) and 3 stations will be in mobility state to emulate real-life network scenario. \\ A python script will contain the code for this configuration and upon completion, we start the network using Mininet on a Linux terminal and view the network emulation on the Mininet-GUI feature while having to observe access point association, full connectivity between all nodes in the network on the Mininet CLI, and briefly understand how communication channels are used in a wireless network. \\\\
+In this task, we emulate a wireless network designed for a floor in the new building. For this purpose, we emulate 3 stations and 5 access points. The stations may represent a smart hand-held device which can vary from smartphone to a laptop, UE or to any WiFi compatible device. The stations carry a Class C private IP address of the same network. Access points are connected using a physical link facilitating a linear topology. The new building would create a minimalistic noise threshold of -91dBm. The access points are positioned strategically within the floor to make space for a signal dead-zone(red-spot) and 3 stations will be in mobility state to emulate real-life network scenario. \\ A python script will contain the code for this configuration and upon completion, we start the network using Mininet on a Linux terminal and view the network emulation on the Mininet-GUI feature while having to observe access point association, full connectivity between all nodes in the network on the Mininet CLI, and briefly understand how communication channels are used in a wireless network. \\\\
 The figures below show the outline of the floor-plan in context and position of APs and  stations in the design.
     	\begin{figure}[h]
-        		\centering
+		\centering
         		\minipage{0.5\textwidth}
         		\includegraphics[width=0.9\linewidth]{floorplan1.png}
         		\caption{Floor-plan in context}
@@ -85,11 +79,8 @@ The figures below show the outline of the floor-plan in context and position of 
        		\label{fig:t1-2}
        		\endminipage
     	\end{figure} 
-	
 \subsection{Design and Configuration}
-Both figures show the outline of the floor-plan in context with the dimensions included on fig. 3 while fig. 4 is a snapshot of the Mininet GUI with the positions of the stations and access points and the range of coverage of all devices. The 'red-spotted' zone as seen remains free of WiFi signals as required in the design. \\ Table 1 contains the details of stations and access points which are used for the network configuration in a python script. All three stations share the same network address and have full authenticated access to each access points. \\ The access points are positioned strategically and linked serially to ensure the required zones within the floor have strong WiFi coverage and support full connectivity for connected nodes or stations. To emulate real networking scenario, mobility is included for the stations, details are shown in Table 2. Mobility attributes in terms of velocity or speed of motion for each station are specified. The mobility attributes are added to the python code for the network configuration which is captured in the appendix section of this document.
-
-
+Both figures show the outline of the floor-plan in context with the dimensions included on fig. 3 while fig. 4 is a snapshot of the Mininet GUI with the positions of the stations and access points and the range of coverage of all devices. The 'red-spotted' zone as seen remains free of WiFi signals as required in the design. \\ Table 1 contains the details of stations and access points which are used for the network configuration in a python script. All three stations share the same network address and have full authenticated access to each access points. \\ The access points are positioned strategically and linked serially to ensure the required zones within the floor have strong WiFi frequency coverage and support full connectivity of the stations. To emulate real networking scenario, mobility is included for the stations, details are shown in Table 2. Mobility attributes in terms of velocity or speed of motion for each station are specified. The mobility attributes are added to the python code for the network configuration which is captured in the appendix section of this document.
   	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -120,12 +111,11 @@ Both figures show the outline of the floor-plan in context with the dimensions i
         			STA3 & 140,10 & 15,120 & 25s-60s & \texttt{min\_v=2, max\_v=7 }\\
         			\hline
         		\end{tabular}
-        \caption{Mobility of the Nodes}
+        \caption{Mobility of the stations}
         \label{tab:2}
     	\end{table}
-
-\subsection{Results}
-Commencing the test, we prepare the python script for the network topology with all necessary libraries then run it with Mininet on the Linux terminal. The command \texttt{sudo ./<pycode filename>} is used to start the network using the configuration from the python script on Mininet. Mininet creates the SDN elements such as the controller, stations, and access points and sets up the topology as described in the python script. \\\\ The controller used in this task is the default one used by Mininet since it is not specified. The access points are started and operate based on instructions from the controller. Fig. 5 \& 6 show the Mininet GUI view of the topology prior mobility and after mobility respectively. All stations are within strong WiFi signal coverage and successfully communicate with each other as shown in Fig. 8. \\\\ The \texttt{ping -c 3} command was utilised to send out three Internet Control Message Protocol(ICMP) packets between specified stations to determine full connectivity within the network. This uses s series of request \& reply messages to establish communication between nodes. The results show all three ICMP packets were transmitted and received successfully, no packet loss, and took an average time of 2000 milliseconds for all communications. \\\\ Prior mobility, we see that stations 1 \& 2 would likely be associated with AP1 and station 3 with AP5 due to their close proximity to these APs. During mobility, the stations will lose association, go through a handoff operation, then get associated with the AP in close proximity after mobility. To verify the APs connected to each station after mobility, we use the \texttt{<station name> iwconfig} command to pull the wireless interface information for each station or mobile node.
+\subsection{Results and Analysis}
+Commencing the test, we prepare the python script for the network topology with all necessary libraries then run it with Mininet on the Linux terminal. The command \texttt{sudo ./<pycode filename>} is used to start the network using the configuration from the python script on Mininet. Mininet creates the SDN elements such as the controller, stations, and access points and sets up the topology as described in the python script. \\\\ The controller used in this task is a default one used by Mininet since it has not been specified. The access points are started and operated based on instructions from the controller. Fig. 5 \& 6 show the Mininet GUI view of the topology prior mobility and after mobility respectively. All stations are within strong WiFi signal coverage and successfully communicate with each other as shown in Fig. 8. \\\\ The \texttt{ping -c 3} command was utilised to send out 3 Internet Control Message Protocol(ICMP)\cite{1010101} packets between specified stations to determine full connectivity within the network. This uses a series of request \& reply messages to establish communication between stations. The results show all 3 packets were transmitted and received successfully, no packet loss, and took an average time of 2000 milliseconds for all communications which verifies the optimal performance of the network. \\\\ Prior mobility, we see that stations 1 \& 2 would likely be associated with AP1 and station 3 with AP5 due to their close proximity to these APs but when in mobility state, the stations will lose association with access points, go through a handoff operation, and get associated with the access point in close proximity at the end of mobility state. To confirm this, we use the \texttt{<station name> iwconfig} command on the Mininet CLI to pull the wireless interface information for each station as illustrated in Fig. 7. This same activity could be carried out on each station directly when accessed with the \texttt{xterm <station name>} command on Mininet CLI. \\\\ Briefly, wireless communication is based on digital signals that are transmitted from one end and received at another end over the radio frequency spectrum. Medium Access Control(MAC)\cite{1010101} is a mechanism devised to management how these radio channels are accessed by wireless capable devices for a wireless communication and have two main techniques; Contention-based \& Contention-free MAC. At the end of this experiment, we experience the sort of flexibility SDN brings into wireless network configuration and management, cost of deployment,  quick response time, and overall summary of the network compared to the conventional methods of networking.
     	\begin{figure}[h]
         		\minipage{0.5\textwidth}
         			\includegraphics[width=0.9\linewidth]{beforeMobility.png}
@@ -154,16 +144,24 @@ Commencing the test, we prepare the python script for the network topology with 
     	\end{figure}
 
 \newpage
-\subsection{Analysis}
-
-\newpage
 \section{Task 2 - Adhoc Network Simulation}
+In this task, we emulate an AdHoc network scenario at an emergency gathering car park at the new building when response units will communicate via AdHoc services. We evaluate some adhoc protocols to find which is best for the given situation. For this purpose, 3 stations are emulated and the adhoc protocols which will be tested are the 'batmand', 'batman\_adv', and 'olsrd' protocols. ICMP streams are initiated between the stations closest to each other and 3 VoIP for each adhoc protocol tested. For analysis of connection and network performance, we use a network protocol analytic tool known as Wireshark to inspect and capture traffic of a network in real-time. It shows details about protocols and can be used to generate a graphical or visualised view of network traffic.
+\subsection{AdHoc Networks}
+AdHoc\cite{1010101} networks are quick to deploy and dynamic form of networks that can be designed for a particular use-case. It is a wireless network however individual nodes can act as hops for forwarding packets within the local network. AdHoc networks are less reliant on infrastructure and efficient in setting up wireless communications in cases of emergencies.
     	\begin{figure}[h]
         		\centering
         		\includegraphics[width=0.4\linewidth]{adhoc.png}
-        		\caption{Adhoc Network with 3 Nodes}
+        		\caption{Adhoc Network with 3 stations}
         		\label{fig:t2-1}
     	\end{figure}
+\subsection{Design and Configuration}
+A python script is used for the configuration of the network where all 3 stations are created and configured with a protocol to support communication over the AdHoc network. Fig. 9 depicts the floor plan of the new building and emergency gathering car park with 3 stations in close proximity. Table 3 contains the station names, IPv6 and MAC addresses, their positions, range of radio frequency coverage, and wireless configuration with details about those fields below; 
+	\begin{itemize}
+		\item A\_HEIGHT: the height of the antenna typically in physical distance(metres) between the antenna and the ground or reference point
+		\item A\_GAIN: the measure of how good an antenna converts input power into radio waves in a specific direction. Usually expressed in decibels (dB)
+		\item SSID: Service Set Identifier, unique name used to identify a wireless local area network(WLAN)
+		\item HT\_CAP.: High Throughput Capability, relates to 802.11n/ac standards to support high data rate and better performance 
+	\end{itemize}
     	\begin{table}[h]
         		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         			\hline
@@ -174,45 +172,71 @@ Commencing the test, we prepare the python script for the network topology with 
         			STA3 & 2024::13 & 00:00:00:00:01:13 & 70,10,0 & 30 & 3 & 7 & adhocUH & HT40+ \\
         			\hline
         		\end{tabular}
-       	 	\caption{Adhoc Nodes Information}
+       	 	\caption{Adhoc stations configuration details}
         		\label{tab:3}
     	\end{table}
-	
 \newpage
-\subsection{Results}
-    	\begin{figure}[h]
+\subsection{Results and Analysis}
+After completion of the script, the network is started on the Linux terminal with the \texttt{sudo ./<python filename>} command. For this experiment, we aim to establish a successful connection between the closest stations in our setup i.e. between STA1 and STA2 and test out a VoIP connection between the stations under three different adhoc protocols. \\ The Session Initiation Protocol(SIP) which is a protocol used to establish, modify, and terminate multimedia sessions over IP networks will be initiated on one station as a server and on the other as client. The SIP commands are run on each stations directly accessing them with \texttt{xterm <station name>} on Mininet CLI. 
+	\begin{itemize}
+		\item on server(STA1): \texttt{sipp -sn -uas}
+		\item on client(STA2): \texttt{sipp -sn uac <STA1 IPv4> -timeout 120}
+	\end{itemize}
+	\begin{figure}[h]
         		\centering
-        		\includegraphics[width=0.7\linewidth]{batman_adv1.png} \\
-        		\includegraphics[width=0.7\linewidth]{batman_adv.png}
-        		\caption{Throughput using BATMAN\_ADV protocol}
+        		\includegraphics[width=0.6\textwidth]{batman_adv1.png}
+        		\includegraphics[width=0.6\textwidth]{batman_adv.png}		
+        		\caption{SIP connection \& throughput graph under the BATMAN\_ADV protocol}
         		\label{fig:t2-2}
     	\end{figure}
-   
-\newpage
+The \texttt{sipp -sn -uas} command sets up a User Agent Server on STA1 to respond to incoming SIP requests such as an INVITE messages with appropriate SIP responses such as 180 RINGING, 200 OK. \\ The \texttt{sipp -sn uac <STA1 IPv4> -timeout 120} command sets up STA2 as a User Agent Client to send INVITE messages to initiate SIP calls and wait for response  such as 180 RINGING and 200 OK. \\\\ We capture and inspect the communication on Wireshark by running another instance of xterm on the client station on the Mininet CLI, then entered the command \texttt{sudo wireshark} to launch Wireshark. After it launches, the interface for the client station is selected to view the detailed packet information and throughput graph is generated by clicking on the 'Statistics' tab in Wireshark then selecting 'I/O Graph' from the dropdown list.
     	\begin{figure}[h]
         		\centering
-        		\includegraphics[width=0.7\linewidth]{batmand1.png} \\
-        		\includegraphics[width=0.7\linewidth]{batmand.png}
-        		\caption{Throughput using BATMAND protocol}
+        		\includegraphics[width=0.6\linewidth]{batmand1.png}
+		\includegraphics[width=0.6\linewidth]{batmand.png}
+        		\caption{SIP connection \& throughput under BATMAND protocol}
         		\label{fig:t2-3}
     	\end{figure}
-	
+\par The figures 10, 11 \& 12 show the statistics from the SIP connection which lasts for 120 seconds on both server and client terminal CLI and the throughput graph from Wireshark. \\\\ Under the 'batman\_adv' protocol, the connection statistics on the server(STA1) shows;
+	\begin{itemize}
+		\item Cumulative Call Rate of 9.613 calls per second
+		\item 1192 Successful Calls created
+		\item 0 Failed Calls
+	\end{itemize}
+Under the 'batmand' protocol, the connection statistics on the server(STA1) shows;
+	\begin{itemize}
+		\item Cumulative Call Rate of 9.497 calls per second
+		\item 1177 Successful Calls created
+		\item 0 Failed Calls
+	\end{itemize}
+Under the 'olsrd" protocol, the connection statistics on the server(STA1) shows;
+	\begin{itemize}
+		\item Cumulative Call Rate of 9.531 calls per second
+		\item 1182 Successful Calls created
+		\item 0 Failed Calls
+	\end{itemize}
 \newpage
-    	\begin{figure}[h]
+    	\begin{figure}[]
         		\centering
-        		\includegraphics[width=0.7\linewidth]{olsrd1.png} \\
-        		\includegraphics[width=0.7\linewidth]{olsrd.png}
-        		\caption{Throughput using OLSRD protocol}
+        		\includegraphics[width=0.6\linewidth]{olsrd1.png}
+        		\includegraphics[width=0.6\linewidth]{olsrd.png}
+        		\caption{SIP connection \& throughput under OLSRD protocol}
         		\label{fig:t2-4}
     	\end{figure}
-	
-\newpage
-\subsection{Analysis}
-For this experiment, we aim to establish a successful connection between the closest stations in the setup i.e. between STA1 and STA2 or STA2 and STA3 and test out a VoIP connection between the stations under three different MANET protocols. From our test results, we observe that the different MANET protocols tested have identical similarity in terms of the average packets sent per second achieved during the VoIP connection for same amount of time.
+\par At the end of this experiment, we have achieved a functioning adhoc network with successful VoIP connectivity under different adhoc protocols. Analysing the results from the statistics shows the best protocol to be the 'batman\_adv' protocol since it achieved the highest call rate however, we notice slight difference among the 3 protocols tested in terms of network performance, connections maintained, and average bandwidth maintained during transmission period.
 
 \newpage
 \section{Task 3 - SDN Simulation}
-This task activity utilises the concept of Software Defined Networking with an Openflow on the local machine to manage our network. \\The network comprises five interconnected switches, three servers in an old building, and access to two hosts in a new building at the University of Hertfordshire. The table below contains the configuration information for hosts and servers in the network.
+This task activity utilises the concept of Software Defined Networking in conjunction with OpenFlow on the local machine to manage our network. The experiment entails creating a network that connects an old building to a new building at the University of Hertfordshire. The task emulates 3 servers housed in the old building and 2 hosts in the new building. We utilise 5 switches for the underlying data forwarding and an SDN controller for the purpose of this activity. We also undertake a UDP transmission  between two nodes for a specified duration, port number, and bandwidth. 
+\subsection{ONOS Controller}
+ONOS stands for Open Network Operating System. ONOS provides the control plane for a software-defined network (SDN), managing network components, such as switches and links, and running software programs or modules to provide communication services to end hosts and neighbouring networks. It was developed by the ONOS Project, which is led by a collaboration of various universities and industry partners, including Intel and Ericsson. ONOS controller helps to attain the advantages of SDN by achieving network programmability, high-performance and scalability, support for OpenFlow protocols, support virtualisation of networks, fault tolerant and high-availability, and support for heterogeneity of network devices.
+\subsection{Design and Configuration}
+Table 4 contains the configuration information for hosts and servers in the network which is used in the python script for the network configuration. After completing the python script, the ONOS controller is built and started on a Linux terminal with the commands \texttt{bazel build onos} and \texttt{runsdn}. When the ONOS server is ready, we log in with \texttt{onos localhost} command from a new terminal where we have access to the controller and can activate some networking applications for the network to operate properly. The commands;
+	\begin{itemize}
+		\item \texttt{app activate org.onosproject.openflow}
+		\item \texttt{app activate org.onosproject.fwd}
+	\end{itemize}
+are used to activate flows and reactive routing on the controller which is necessary for transfer of packets across the network. Now, on a new terminal we run the network configuration file with the command; \\ \texttt{sudo mn --custom <python filename> --controller remote,ip=<ONOS controller IP> --topo <topo name>} which specifies the controller to be used for the network. \\ We access the ONOS GUI at \texttt{http://localhost:8181/onos/ui} to view the topology of the network which is shown in fig. 13.
     	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|c|}
@@ -229,16 +253,27 @@ This task activity utilises the concept of Software Defined Networking with an O
         		\caption{Network Configuration}
         		\label{tab:4}
     	\end{table}
-
     	\begin{figure}[h]
         		\centering
         		\includegraphics[width=0.8\linewidth]{t3-topo.png}
         		\caption{Building Plan}
         		\label{fig:t3-1}
     	\end{figure}
-
 \newpage
-\subsection{Results}
+\par As seen in the configuration details in Table 4, the hosts and servers are in different networks. Without any routing configured on the nodes, nodes will not be able to communicate with nodes in a different network. To solve this issue, we configured static routes on each node with information of the other network. The command below is a generic one of the routing configured on each node; 
+	\begin{itemize}
+		\item \texttt{ip route add <network address>/<netmask>  dev <interface>}
+	\end{itemize}
+This can be carried out on the Mininet CLI, the ip route command preceded with the node name or directly on the node terminal CLI accessed with 'xterm' from Mininet. Once the route configurations are done, we can expect to have full connectivity in the network and proceed to the UDP transmission. To carry out this activity, a terminal CLI for both nodes(Server \& Host 1) is open using the 'xterm' command on Mininet. On the server, we enter the command; 
+	\begin{itemize}
+		\item \texttt{iperf -s -u -p <port> -i 1} : initiate the server to listen for UDP connections on port specfied for every second
+	\end{itemize}
+And on client, we enter command;
+	\begin{itemize}
+		\item \texttt{iperf -c <server IP> -u -p <port> -t <time> -b <bandwidth>} : start the UDP connection between client to the ip address, port, duration, and bandwidth specified
+	\end{itemize}
+\newpage
+\subsection{Results and Analysis}
 After setting up and running the network on mininet and configuring static routes to various networks on each host, we check the connectivity of hosts in the design. The following images are results from a 'pingall' command in mininet and server-client UDP connection for 600s at a bandwidth of 100Mbsec.
   	\begin{figure}[h]
             	\centering
@@ -247,8 +282,6 @@ After setting up and running the network on mininet and configuring static route
             	\caption{Full ping connectivity \& Server-Client UDP connection}
             	\label{fig:t3-2}
         \end{figure}
-        
-\subsection{Analysis}
 
 \newpage
 \section{Task 4 - Multicast Video Stream Service}
@@ -256,7 +289,7 @@ After setting up and running the network on mininet and configuring static route
         		\centering
         		\begin{tabular}{|c|c|}
             		\hline
-            		NAME & IP ADDRESS \\
+            		DEVICE NAME & IP ADDRESS \\
             		\hline
             		H1 & 50.10.10.10 \\
             		H2 & 50.10.10.11 \\
