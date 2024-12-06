@@ -1,3 +1,4 @@
+fix conflict
 task1
   wireless network design for a department floor
   consist five access points and three stations, aunthentication for AP access
