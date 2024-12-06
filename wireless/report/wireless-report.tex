@@ -33,7 +33,7 @@
 
 \newpage
 \begin{abstract}
-The world has been considered a digital society with the intervention of the Internet. These computer networks form a strong foundation in the manner we access information, communicate, and handle data, providing convenience in various aspects of life. This technology relies strongly on the operations of traditional IP networks and despite being widely adopted, they do get complex and hard to manage in terms of configuration according to predefined policies and reconfiguration in response to load, faults, and changes. On top of that, conventional networks are vertically integrated(the control plane and data plane are bundled together). Emerging technologies such as Software Defined Networking (SDN) provides a convenient approach in handling computer networks. SDN brings a proposed paradigm which changes state of affairs by separating the network's control logic from the data plane. This approach enables centralisation of network control and ability to program the network improving network availability, scalability, and management. This report presents a practical survey on SDN. It starts by utilising concepts of SDN in both a wireless and wired network scenario, an Ad-Hoc Network for emergency scenario, and multi-cast video streaming. We measure and test out performance metrics such as throughput and jitter for communications under Session Initiation Protocol (SIP), connection-less communication in server and client scenario. All activities are carried out on a single machine running Linux with underlying applications such as Mininet, Open Network Operating System(ONOS) and Wireshark.
+The world has been considered a digital society with the intervention of the Internet. These computer networks form a strong foundation in the manner we access information, communicate, and handle data, providing convenience in various aspects of life. This technology relies strongly on the operations of traditional IP networks and despite being widely adopted, they do get complex and hard to manage in terms of configuration according to predefined policies and reconfiguration in response to load, faults, and changes. On top of that, conventional networks are vertically integrated(the control plane and data plane are bundled together). Emerging technologies such as Software Defined Networking (SDN) provides a convenient approach in handling computer networks. SDN brings a proposed paradigm which changes state of affairs by separating the network's control logic from the data plane. This approach enables centralisation of network control and ability to program the network improving network availability, scalability, and management. This report presents a practical survey on SDN. It starts by utilising concepts of SDN in both a wireless and wired network scenario, an Ad-Hoc Network for emergency scenario, and multi-cast video streaming. We measure and test out performance metrics such as throughput and jitter for communications under Session Initiation Protocol (SIP), connectionless communication in server and client scenario. All activities are carried out on a single machine running Linux with underlying applications such as Mininet, Open Network Operating System(ONOS) and Wireshark.
 \end{abstract}
 
 \newpage
@@ -236,7 +236,7 @@ Table 4 contains the configuration information for hosts and servers in the netw
 		\item \texttt{app activate org.onosproject.openflow}
 		\item \texttt{app activate org.onosproject.fwd}
 	\end{itemize}
-are used to activate flows and reactive routing on the controller which is necessary for transfer of packets across the network. Now, on a new terminal we run the network configuration file with the command; \\ \texttt{sudo mn --custom <python filename> --controller remote,ip=<ONOS controller IP> --topo <topo name>} which specifies the controller to be used for the network. \\ We access the ONOS GUI at \texttt{http://localhost:8181/onos/ui} to view the topology of the network which is shown in fig. 13.
+are used to activate flows and reactive routing on the controller which is necessary for transfer of packets across the network. Now, on a new terminal we run the network configuration file with the command; \\ \texttt{sudo mn --custom <python filename> --controller remote,ip=<ONOS controller IP> --topo <topo name>} which specifies the controller to be used for the network. \\ We access the ONOS GUI at \texttt{http://localhost:8181/onos/ui} to view the topology of the network which is shown in fig. 13. This is available only after all nodes can have full connectivity to each other, thus servers and hosts can communicate successfully. The hosts are made visible on the ONOS GUI by pressing the "H" key on the keyboard.
     	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|c|}
@@ -264,7 +264,7 @@ are used to activate flows and reactive routing on the controller which is neces
 	\begin{itemize}
 		\item \texttt{ip route add <network address>/<netmask>  dev <interface>}
 	\end{itemize}
-This can be carried out on the Mininet CLI, the ip route command preceded with the node name or directly on the node terminal CLI accessed with 'xterm' from Mininet. Once the route configurations are done, we can expect to have full connectivity in the network and proceed to the UDP transmission. To carry out this activity, a terminal CLI for both nodes(Server \& Host 1) is open using the 'xterm' command on Mininet. On the server, we enter the command; 
+This can be carried out on the Mininet CLI, the ip route command preceded with the node name or directly on the node terminal CLI accessed with 'xterm' from Mininet. Once the route configurations are done, we can expect to have full connectivity in the network and proceed to the UDP transmission. To carry out this activity, a terminal CLI for both nodes(Server \& Host1) is launched using the 'xterm' command on Mininet. The 'iperf' is a command which can be used to stress-test a network to determine communication performance of the network. \\ On the server, we enter the command; 
 	\begin{itemize}
 		\item \texttt{iperf -s -u -p <port> -i 1} : initiate the server to listen for UDP connections on port specfied for every second
 	\end{itemize}
@@ -272,16 +272,36 @@ And on client, we enter command;
 	\begin{itemize}
 		\item \texttt{iperf -c <server IP> -u -p <port> -t <time> -b <bandwidth>} : start the UDP connection by the client to the server, at port, duration, and bandwidth specified
 	\end{itemize}
-\newpage
+
 \subsection{Results and Analysis}
-After setting up and running the network on mininet and configuring static routes to various networks on each host, we check the connectivity of hosts in the design. The following images are results from a 'pingall' command in mininet and server-client UDP connection for 600s at a bandwidth of 100Mbsec.
+After activating the networking apps on the controller and starting the network on Mininet, we check the connectivity of nodes in our network prior to configuring static routes on each node. The fig. 14 has images of the results from a 'pingall' command in Mininet. \\\\ As shown, 90\% of packets dropped from testing connectivity prior configuring the ip routes on nodes due to the nodes having no idea how to reach other networks outside their original network. Once the nodes have information on how to reach other networks, full connectivity is achieved as we see 0\% packets were dropped. \\\\  After connectivity is confirmed, we commence the UDP(connectionless) communication between Server1 \& Host1 for 600 seconds, with bandwidth of 100 megabytes per second, and on port 5656. \\ The results from the UDP test in fig. 15 showed successful connection between Server1 \& Host1 with the following statistics;
+	\begin{itemize}
+		\item connection time of 600 seconds
+		\item total jitter(time of arrival of each packet) of 0.161 milliseconds
+		\item transferred total of 7.32 gigabytes of data
+		\item maintained bandwidth of 105 megabytes per second
+		\item 5349875 total datagrams sent and 250 datagrams received out-of-order
+	\end{itemize}
+\begin{center}
   	\begin{figure}[h]
-            	\centering
-            	\includegraphics[width=0.5\linewidth]{t3-pingall.png}
-            	\includegraphics[width=0.9\linewidth]{t3-udp.png}
-            	\caption{Full ping connectivity \& Server-Client UDP connection}
+		\minipage{0.5\textwidth}
+			\includegraphics[width=1\linewidth]{t3-noping.png}
+		\endminipage{} 
+		\minipage{0.5\textwidth}
+			\includegraphics[width=1\linewidth]{t3-pingall.png}
+		\endminipage{}
+            	\caption{Connectivity tests before \& after reactive routing activation}
             	\label{fig:t3-2}
+        \end{figure} 
+	\vspace{10pt}
+        \begin{figure}[h]
+        		\centering
+		\includegraphics[width=1\linewidth]{t3-udp.png}
+		\caption{UDP connection between Server \& Client}
+		\label{fig:t3-3}
         \end{figure}
+\end{center}
+\par UDP based communications are faster compared to TCP based connections. This is due to the lack of error checks and the acknowledgement technique used by TCP to establish secure and less error in communications. This snippet from Wireshark gives details on how the UDP protocol works. The transfer is one-way(from Host1 to Server1) only with no acknowledgment from Server1.
 
 \newpage
 \section{Task 4 - Multicast Video Stream Service}
@@ -318,16 +338,13 @@ After setting up and running the network on mininet and configuring static route
     	\end{figure}
     
 \newpage    
-\subsection{Results}
+\subsection{Results and Analysis}
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.7\linewidth]{ms-vlc.png}
 		\caption{Multicast video stream from source to hosts}
 		\label{fig:t4-3}
 	\end{figure}
-
-\newpage
-\subsection{Analysis}
 
 \newpage
 \section{References}
