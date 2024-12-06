@@ -115,7 +115,7 @@ Both figures show the outline of the floor-plan in context with the dimensions i
         \label{tab:2}
     	\end{table}
 \subsection{Results and Analysis}
-Commencing the test, we prepare the python script for the network topology with all necessary libraries then run it with Mininet on the Linux terminal. The command \texttt{sudo ./<pycode filename>} is used to start the network using the configuration from the python script on Mininet. Mininet creates the SDN elements such as the controller, stations, and access points and sets up the topology as described in the python script. \\\\ The controller used in this task is a default one used by Mininet since it has not been specified. The access points are started and operated based on instructions from the controller. Fig. 5 \& 6 show the Mininet GUI view of the topology prior mobility and after mobility respectively. All stations are within strong WiFi signal coverage and successfully communicate with each other as shown in Fig. 8. \\\\ The \texttt{ping -c 3} command was utilised to send out 3 Internet Control Message Protocol(ICMP)\cite{1010101} packets between specified stations to determine full connectivity within the network. This uses a series of request \& reply messages to establish communication between stations. The results show all 3 packets were transmitted and received successfully, no packet loss, and took an average time of 2000 milliseconds for all communications which verifies the optimal performance of the network. \\\\ Prior mobility, we see that stations 1 \& 2 would likely be associated with AP1 and station 3 with AP5 due to their close proximity to these APs but when in mobility state, the stations will lose association with access points, go through a handoff operation, and get associated with the access point in close proximity at the end of mobility state. To confirm this, we use the \texttt{<station name> iwconfig} command on the Mininet CLI to pull the wireless interface information for each station as illustrated in Fig. 7. This same activity could be carried out on each station directly when accessed with the \texttt{xterm <station name>} command on Mininet CLI. \\\\ Briefly, wireless communication is based on digital signals that are transmitted from one end and received at another end over the radio frequency spectrum. Medium Access Control(MAC)\cite{1010101} is a mechanism devised to management how these radio channels are accessed by wireless capable devices for a wireless communication and have two main techniques; Contention-based \& Contention-free MAC. At the end of this experiment, we experience the sort of flexibility SDN brings into wireless network configuration and management, cost of deployment,  quick response time, and overall summary of the network compared to the conventional methods of networking.
+Commencing the test, we prepare the python script for the network topology with all necessary libraries then run it with Mininet on the Linux terminal. The command \texttt{sudo ./<pycode filename>} is used to start the network using the configuration from the python script on Mininet. Mininet creates the SDN elements such as the controller, stations, and access points and sets up the topology as described in the python script. \\\\ The controller used in this task is a default one used by Mininet since it has not been specified. The access points are started and operated based on instructions from the controller. Fig. 5 \& 6 show the Mininet GUI view of the topology prior mobility and after mobility respectively. All stations are within strong WiFi signal coverage and successfully communicate with each other as shown in Fig. 8. \\\\ The \texttt{ping -c 3} command was utilised to send out 3 Internet Control Message Protocol(ICMP)\cite{1010101} packets between specified stations to determine full connectivity within the network. This uses a series of request \& reply messages to establish communication between stations. The results show all 3 packets were transmitted and received successfully, no packet loss, and took an average time of 2000 milliseconds for all communications which verifies the optimal performance of the network. \\\\ Prior mobility, we see that stations 1 \& 2 would likely be associated with AP1 and station 3 with AP5 due to their close proximity to these APs but when in mobility state, the stations will lose association with access points, go through a handoff operation, and get associated with the access point in close proximity at the end of mobility state. To confirm this, we use the \texttt{<station name> iwconfig} command on the Mininet CLI to pull the wireless interface information for each station as illustrated in Fig. 7. This same activity could be carried out on each station directly when accessed with the \texttt{xterm <station name>} command on Mininet CLI. \\\\ Briefly, wireless communication is based on digital signals that are transmitted from one end and received at another end over the radio frequency spectrum. Medium Access Control(MAC)\cite{1010101} is a mechanism devised to management how these radio channels are accessed by wireless capable devices for a wireless communication and have two main techniques; Contention-based \& Contention-free MAC. \\\\ At the end of this experiment, we experience the sort of flexibility SDN brings into wireless network configuration and management, cost of deployment,  quick response time, and overall summary of the network compared to the conventional methods of networking.
     	\begin{figure}[h]
         		\minipage{0.5\textwidth}
         			\includegraphics[width=0.9\linewidth]{beforeMobility.png}
@@ -209,7 +209,7 @@ Under the 'batmand' protocol, the connection statistics on the server(STA1) show
 		\item 1177 Successful Calls created
 		\item 0 Failed Calls
 	\end{itemize}
-Under the 'olsrd" protocol, the connection statistics on the server(STA1) shows;
+Under the 'olsrd' protocol, the connection statistics on the server(STA1) shows;
 	\begin{itemize}
 		\item Cumulative Call Rate of 9.531 calls per second
 		\item 1182 Successful Calls created
@@ -270,7 +270,7 @@ This can be carried out on the Mininet CLI, the ip route command preceded with t
 	\end{itemize}
 And on client, we enter command;
 	\begin{itemize}
-		\item \texttt{iperf -c <server IP> -u -p <port> -t <time> -b <bandwidth>} : start the UDP connection between client to the ip address, port, duration, and bandwidth specified
+		\item \texttt{iperf -c <server IP> -u -p <port> -t <time> -b <bandwidth>} : start the UDP connection by the client to the server, at port, duration, and bandwidth specified
 	\end{itemize}
 \newpage
 \subsection{Results and Analysis}
@@ -336,6 +336,7 @@ After setting up and running the network on mininet and configuring static route
 
 \newpage
 \section{Appendix}
+
 \renewcommand{\thesection}{\alph{section}}
 \setcounter{section}{0}
 \section{Task 1 code}
