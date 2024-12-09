@@ -44,7 +44,7 @@ Software-Defined Networking (SDN) is a computer technology that brings a change 
 	\begin{figure}[h]
         		\centering
         		\includegraphics[width=0.7\linewidth]{SDN.png}
-        		\caption{Traditional Networks vs SDN Networks}
+        		\caption{Traditional networks vs SDN networks}
         		\label{fig:SDN1}
 	\end{figure}
     
@@ -52,7 +52,7 @@ Software-Defined Networking (SDN) is a computer technology that brings a change 
     	\begin{figure}[h]
         		\centering
         		\includegraphics[width=0.5\linewidth]{SDN1.png}
-        		\caption{SDN Architecture}
+        		\caption{SDN architecture}
        		 \label{fig:SDN2}
     	\end{figure} 
 The underlying network applications or packages which are the softwares for the logical operations within the network are installed and activated on the SDN controller. These applications are known as the Northbound APIs or interface as shown in fig.2. The Southbound interface consist the protocols that facilitates communication between the remote SDN controller and the network devices, for example the OpenFlow\cite{10220519} protocol. Examples of such network applications can be STP, routing algorithms, and access control and examples of a SDN controller can be the ONOS controller. The prospect of such architecture is noticed in terms of ease of network management, programmability and openness to innovations and virtualisation.
@@ -63,7 +63,7 @@ Since research on this topic is still in progress, there are not many devices su
 \subsection{Emulation environment specifications}
 For this experiment, we utilise a microcomputer iMac with the following specifications: Processor 3 GHz 6-Core Intel Core i5, 16GB of ram, running the macOS 15.1, and VirtualBox Oracle VM version 7.1.2.
 In this microcomputer, under the management of VirtualBox, we installed the following guest operating systems: Mininet emulator version 2.0 on Linux operating system Ubuntu 64bits with 4GB of RAM; ONOS controller version ??.
-\section{Task 1 - WiFi Network Simulation}
+\section{Task 1 - WiFi Network Emulation}
 In this task, we emulate a wireless network designed for a floor in the new building. For this purpose, we emulate 3 stations and 5 access points. The stations may represent a smart hand-held device which can vary from smartphone to a laptop, UE or to any WiFi compatible device. The stations carry a Class C private IP address of the same network. Access points are connected using a physical link facilitating a linear topology. The new building would create a minimalistic noise threshold of -91dBm. The access points are positioned strategically within the floor to make space for a signal dead-zone(red-spot) and 3 stations will be in mobility state to emulate real-life network scenario. \\ A python script will contain the code for this configuration and upon completion, we start the network using Mininet on a Linux terminal and view the network emulation on the Mininet-GUI feature while having to observe access point association, full connectivity between all nodes in the network on the Mininet CLI, and briefly understand how communication channels are used in a wireless network. \\\\
 The figures below show the outline of the floor-plan in context and position of APs and  stations in the design.
     	\begin{figure}[h]
@@ -97,7 +97,7 @@ Both figures show the outline of the floor-plan in context with the dimensions i
         			AP5 & 00:00:00:00:00:04 & n/a & 135,40 & AP5 & n/a & 50 & 1 \\
         			\hline
         		\end{tabular}
-        \caption{Details of Stations and Access Points}
+        \caption{Details of stations and access points}
         \label{tab:1}
     	\end{table}
     	\begin{table}[h]
@@ -119,26 +119,26 @@ Commencing the test, we prepare the python script for the network topology with 
     	\begin{figure}[h]
         		\minipage{0.5\textwidth}
         			\includegraphics[width=0.9\linewidth]{beforeMobility.png}
-        			\caption{Prior Mobility}
+        			\caption{Prior mobility}
        			\label{fig:t1-3}
         		\endminipage
        		\minipage{0.5\textwidth}
         			\includegraphics[width=0.9\linewidth]{afterMobility.png}
-        			\caption{After Mobility}
+        			\caption{After mobility}
         			\label{fig:t1-4}
         		\endminipage\vspace{10pt}
         		\minipage{0.5\textwidth}
         			\includegraphics[width=0.9\linewidth]{sta1.png}
         			\includegraphics[width=0.9\linewidth]{sta2.png}
         			\includegraphics[width=0.9\linewidth]{sta3.png}
-        			\caption{APs connected after mobility}
+        			\caption{Access points connected after mobility}
         			\label{fig:t1-5}
         		\endminipage\vspace{10pt}
         		\minipage{0.5\textwidth}
         			\includegraphics[width=0.9\linewidth]{ping1.png}
         			\includegraphics[width=0.9\linewidth]{ping2.png}
        			\includegraphics[width=0.9\linewidth]{ping3.png}
-        			\caption{Successful Connectivity}
+        			\caption{Full node connectivity}
         			\label{fig:t1-6}
         		\endminipage
     	\end{figure}
@@ -147,11 +147,11 @@ Commencing the test, we prepare the python script for the network topology with 
 \section{Task 2 - Adhoc Network Simulation}
 In this task, we emulate an AdHoc network scenario at an emergency gathering car park at the new building when response units will communicate via AdHoc services. We evaluate some adhoc protocols to find which is best for the given situation. For this purpose, 3 stations are emulated and the adhoc protocols which will be tested are the 'batmand', 'batman\_adv', and 'olsrd' protocols. ICMP streams are initiated between the stations closest to each other and 3 VoIP for each adhoc protocol tested. For analysis of connection and network performance, we use a network protocol analytic tool known as Wireshark to inspect and capture traffic of a network in real-time. It shows details about protocols and can be used to generate a graphical or visualised view of network traffic.
 \subsection{AdHoc Networks}
-AdHoc\cite{1010101} networks are quick to deploy and dynamic form of networks that can be designed for a particular use-case. It is a wireless network however individual nodes can act as hops for forwarding packets within the local network. AdHoc networks are less reliant on infrastructure and efficient in setting up wireless communications in cases of emergencies.
+AdHoc\cite{1010101} networks are quick to deploy and dynamic form of networks that can be designed for a particular use-case. It is a wireless network however individual nodes can act as hops for forwarding packets and can move randomly within the local network. AdHoc networks are less reliant on infrastructure and efficient in setting up wireless communications in cases of emergencies or quick deployment.
     	\begin{figure}[h]
         		\centering
         		\includegraphics[width=0.4\linewidth]{adhoc.png}
-        		\caption{Adhoc Network with 3 stations}
+        		\caption{Adhoc network with 3 stations}
         		\label{fig:t2-1}
     	\end{figure}
 \subsection{Design and Configuration}
@@ -227,7 +227,13 @@ Under the 'olsrd' protocol, the connection statistics on the server(STA1) shows;
 
 \newpage
 \section{Task 3 - SDN Simulation}
-This task activity utilises the concept of Software Defined Networking in conjunction with OpenFlow on the local machine to manage our network. The experiment entails creating a network that connects an old building to a new building at the University of Hertfordshire. The task emulates 3 servers housed in the old building and 2 hosts in the new building. We utilise 5 switches for the underlying data forwarding and an SDN controller for the purpose of this activity. We also undertake a UDP transmission  between two nodes for a specified duration, port number, and bandwidth. 
+This task activity utilises the concept of Software Defined Networking in conjunction with OpenFlow on the local machine to manage our network. The experiment entails creating a network that connects an old building to a new building at the University of Hertfordshire. The task emulates 3 servers housed in the old building and 2 hosts in the new building. We utilise 5 switches for the underlying data forwarding and an SDN controller for the purpose of this activity. We also undertake a User Datagram Protocol(UDP) transmission  between two nodes for a specified duration, port number, and bandwidth. \\ A UDP transmission is a type of communication protocol which unlike Transmission Control Protocol(TCP)\cite{CONRAD201263} the communication does not require the three-way handshake(SYN - SYN\_ACK - ACK) to establish a secure connection.
+	\begin{itemize}
+		\item SYN - sender sends synchronisation message to receiver
+		\item SYN\_ACK - receiver sends synchronisation-acknowledgement message to sender
+		\item ACK - sender sends acknowledgment message to receiver to establish communication
+	\end{itemize}  
+to initiate communications. The sender sends out packets without waiting for an acknowledgement from the recipient. This form of communication does check errors and may encounter loss of packets during transmission but in turn achieves faster transmission times and supports transfer of large size data.
 \subsection{ONOS Controller}
 ONOS stands for Open Network Operating System. ONOS provides the control plane for a software-defined network (SDN), managing network components, such as switches and links, and running software programs or modules to provide communication services to end hosts and neighbouring networks. It was developed by the ONOS Project, which is led by a collaboration of various universities and industry partners, including Intel and Ericsson. ONOS controller helps to attain the advantages of SDN by achieving network programmability, high-performance and scalability, support for OpenFlow protocols, support virtualisation of networks, fault tolerant and high-availability, and support for heterogeneity of network devices.
 \subsection{Design and Configuration}
@@ -251,7 +257,7 @@ are used to activate flows and reactive routing on the controller which is neces
             		SERVER3 & 60.0.0.2 & 00:00:00:00:16:02 \\
             		\hline
         		\end{tabular}
-        		\caption{Network Configuration}
+        		\caption{Network configuration details}
         		\label{tab:4}
     	\end{table}
     	\begin{figure}[h]
@@ -260,7 +266,7 @@ are used to activate flows and reactive routing on the controller which is neces
         		\caption{Network topology from ONOS GUI}
         		\label{fig:t3-1}
     	\end{figure}
-\newpage
+
 \par As seen in the configuration details in Table 4, the hosts and servers are in different networks. Without any routing configured on the nodes, nodes will not be able to communicate with nodes in a different network. To solve this issue, we configured static routes on each node with information of the other network. The command below is a generic one of the routing configured on each node; 
 	\begin{itemize}
 		\centering
@@ -268,7 +274,7 @@ are used to activate flows and reactive routing on the controller which is neces
 	\end{itemize}
 This can be carried out on the Mininet CLI, the ip route command preceded with the node name or directly on the node terminal CLI accessed with 'xterm' from Mininet. Once the route configurations are done, we can expect to have full connectivity in the network and proceed to the UDP transmission. To carry out this activity, a terminal CLI for both nodes(Server \& Host1) is launched using the 'xterm' command on Mininet. The 'iperf' is a command which can be used to stress-test a network to determine communication performance of the network. \\ On the server, we enter the command; 
 	\begin{itemize}
-		\item \texttt{iperf -s -u -p <port> -i 1} : initiate the server to listen for UDP connections on port specfied for every second
+		\item \texttt{iperf -s -u -p <port> -i 1} : initiate the server to listen for UDP connections on port specified for every second
 	\end{itemize}
 And on client, we enter command;
 	\begin{itemize}
@@ -276,10 +282,10 @@ And on client, we enter command;
 	\end{itemize}
 
 \subsection{Results and Analysis}
-After activating the networking apps on the controller and starting the network on Mininet, we check the connectivity of nodes in our network prior to configuring static routes on each node. The fig. 14 has images of the results from a 'pingall' command in Mininet. \\\\ As shown, 90\% of packets dropped from testing connectivity prior configuring the ip routes on nodes due to the nodes having no idea how to reach other networks outside their original network. Once the nodes have information on how to reach other networks, full connectivity is achieved as we see 0\% packets were dropped. \\\\  After connectivity is confirmed, we commence the UDP(connectionless) communication between Server1 \& Host1 for 600 seconds, with bandwidth of 100 megabytes per second, and on port 5656. \\ The results from the UDP test in fig. 15 showed successful connection between Server1 \& Host1 with the following statistics;
+After we activate the network apps on the ONOS controller and start the network on Mininet, we check the connectivity of nodes in our network prior to configuring static routes on each node. The fig. 14 has images of the results from a 'pingall' command in Mininet. \\\\ As shown, 90\% of packets dropped from testing connectivity prior configuring the ip routes on nodes due to the nodes having no idea how to reach other networks outside their original network. Once the nodes have routing information to reach other networks, full connectivity is achieved as shown from 0\% packets dropped. \\\\  Then commenced the UDP communication between Server1 \& Host1 for 600 seconds, with bandwidth of 100 megabytes per second, and on port 5656 after full connectivity of the network is established. \\ The results from the UDP test in fig. 15 showed successful connection between Server1 \& Host1 with the following statistics;
 	\begin{itemize}
 		\item connection time of 600 seconds
-		\item total jitter(time of arrival of each packet) of 0.161 milliseconds
+		\item total jitter(time interval of packet arrival) of 0.161 milliseconds
 		\item transferred total of 7.32 gigabytes of data
 		\item maintained bandwidth of 105 megabytes per second
 		\item 5349875 total datagrams sent and 250 datagrams received out-of-order
@@ -287,10 +293,12 @@ After activating the networking apps on the controller and starting the network 
 \begin{center}
   	\begin{figure}[h]
 		\minipage{0.5\textwidth}
-			\includegraphics[width=1\linewidth]{t3-noping.png}
+			\centering
+			\includegraphics[width=0.7\linewidth]{t3-noping.png}
 		\endminipage{} 
 		\minipage{0.5\textwidth}
-			\includegraphics[width=1\linewidth]{t3-pingall.png}
+			\centering
+			\includegraphics[width=0.7\linewidth]{t3-pingall.png}
 		\endminipage{}
             	\caption{Connectivity tests before \& after reactive routing activation}
             	\label{fig:t3-2}
@@ -303,10 +311,11 @@ After activating the networking apps on the controller and starting the network 
 		\label{fig:t3-3}
         \end{figure}
 \end{center}
-\par UDP based communications are faster compared to TCP based connections. This is due to the lack of error checks and the acknowledgement technique used by TCP to establish secure and less error in communications. This snippet from Wireshark gives details on how the UDP protocol works. The transfer is one-way(from Host1 to Server1) only with no acknowledgment from Server1.
-
 \newpage
+\par In general, UDP based communications are faster compared to TCP based connections. This is due to the lack of error checks and the acknowledgement technique used by TCP to establish secure and less error in communications. This snippet from Wireshark gives details on how the UDP protocol works. The transfer is one-way(from Host1 to Server1) with no acknowledgment from Server1. This allows for high rate data transfer and beneficial in applications where data transfer is needed in real-time. SDN supports the building of these network scenarios with no need in attaining hardware equipments, reduce expenses, and provides faster and convenient control of the entire network.
+
 \section{Task 4 - Multicast Video Stream Service}
+The final experiment emulates a local area network(LAN) and testing the multicast video streaming facility in the new building to facilitate learning. Multicasting in networking is a type of communication which is known as a one-to-many communication. In plain terms, a sender can broadcast messages to a some among many nodes in the network however the receivers are in control of actually receiving this messages. It is always advantageous to use multicast rather than multiple unicast communication\cite{1010101}.
     	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|}
@@ -319,7 +328,7 @@ After activating the networking apps on the controller and starting the network 
             		VS & 50.10.10.20 \\
             		\hline
         		\end{tabular}
-        		\caption{Network Configuration}
+        		\caption{Network configuration details}
         		\label{tab:5}
     	\end{table}
     	\begin{figure}[h]
