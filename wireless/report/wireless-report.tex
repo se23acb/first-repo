@@ -40,17 +40,19 @@ The world has been considered a digital society with the intervention of the Int
 \section{Introduction}
 Since the conception and realisation of the Advanced Research Projects Agency Networks(ARPANET)\cite{5432117}, developments and innovations in computer networks has seen a significant growth in size and requirements and navigating traditional network switches has become a challenge. In traditional networks, the control plane operation has a distributed infrastructure that requires protocols such as OSPF, STP, EIGRP, to operate independently on network devices. The forwarding decision which is the process of determining how to send a packet from one device (such as a router or switch) to another device within a network, based on certain criteria is performed by these network devices. This decision is made based on the information available in the routing table (for routers) or the switching table (MAC table) (for switches). It is accepted that the network devices connect but there is no centralised machine to manage or summarise the whole network\cite{Haji_Zeebaree_Saeed_Ameen_Shukur_Omar_Sadeeq_Ageed_Ibrahim_Yasin_2021}. Also, the distributed control and transport protocols running inside routers and switches makes it complex to express desired high-level network policies since network operators must configure each individual network device separately\cite{6994333}. This main issue is rectified by SDN introducing the needed network control, flexibility, and programmability.\\
 \subsection{Software-Defined Networking (SDN) and OpenFlow} 
-Software-Defined Networking (SDN) is a computer technology that brings a change to the limitations of current computer networks infrastructure. SDN\cite{6587999} decouples the control and data plane of a network leaving the switch with the simple function of forwarding packets based on a set of rules. By doing so, it breaks the vertical integration of conventional networks as the control logic is separated from the data plane i.e. the underlying switches and routers that forward the traffic\cite{6994333}. To make possible the communication between the controller and the network devices, OpenFlow\cite{6587999} is used in conjunction with SDN. OpenFlow standardises the communication between the switches and the software-based controller in an SDN architecture. Researchers found it difficult to test out new ideas in current hardware because the source code of the software running on the network device cannot be modified making the infrastructure 'rigid'. As a result, a standardised protocol( eg. OpenFlow ) to control flow table of switches through software was provided by identifying common features in the flow tables of the ethernet switches\cite{6587999}.\\The figures below show a comparison of the traditional network and SDN network and an overview of the SDN architecture.\\
+Software-Defined Networking (SDN) is a computer technology that brings a change to the limitations of current computer networks infrastructure. SDN\cite{6587999} decouples the control and data plane of a network leaving the switch with the simple function of forwarding packets based on a set of rules. By doing so, it breaks the vertical integration of conventional networks as the control logic is separated from the data plane i.e. the underlying switches and routers that forward the traffic\cite{6994333}. To make possible the communication between the controller and the network devices, OpenFlow\cite{6587999} is used in conjunction with SDN. OpenFlow standardises the communication between the switches and the software-based controller in an SDN architecture. Researchers found it difficult to test out new ideas in current hardware because the source code of the software running on the network device cannot be modified making the infrastructure 'rigid'. As a result, a standardised protocol( eg. OpenFlow ) to control flow table of switches through software was provided by identifying common features in the flow tables of the ethernet switches\cite{6587999}.\\The figures below show a comparison of the overview for traditional  and SDN network architecture.\\
 	\begin{figure}[h]
         		\centering
+		\small
         		\includegraphics[width=0.7\linewidth]{SDN.png}
-        		\caption{Traditional networks vs SDN networks}
+        		\caption{Architecture for Traditional and SDN networks}
         		\label{fig:SDN1}
 	\end{figure}
     
 	\newpage
     	\begin{figure}[h]
         		\centering
+		\small
         		\includegraphics[width=0.5\linewidth]{SDN1.png}
         		\caption{SDN architecture}
        		 \label{fig:SDN2}
@@ -163,6 +165,7 @@ A python script is used for the configuration of the network where all 3 station
 		\item HT\_CAP.: High Throughput Capability, relates to 802.11n/ac standards to support high data rate and better performance 
 	\end{itemize}
     	\begin{table}[h]
+		\small
         		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         			\hline
         			NAME & IPv6 & MAC & POSITION & RANGE & A\_HEIGHT & A\_GAIN & SSID & HT\_CAP\\
@@ -312,10 +315,20 @@ After we activate the network apps on the ONOS controller and start the network 
         \end{figure}
 \end{center}
 \newpage
-\par In general, UDP based communications are faster compared to TCP based connections. This is due to the lack of error checks and the acknowledgement technique used by TCP to establish secure and less error in communications. This snippet from Wireshark gives details on how the UDP protocol works. The transfer is one-way(from Host1 to Server1) with no acknowledgment from Server1. This allows for high rate data transfer and beneficial in applications where data transfer is needed in real-time. SDN supports the building of these network scenarios with no need in attaining hardware equipments, reduce expenses, and provides faster and convenient control of the entire network.
+\par In general, UDP based communications are faster compared to TCP based connections. This is due to the lack of error checks and the acknowledgement technique used by TCP to establish secure and less error in communications. \\
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1\linewidth]{t3-wireshark.png}
+		\caption{Wireshark capture on H1-eth0 interface}
+		\label{fig:t3-4}
+	\end{figure}
+\par This snippet from Wireshark gives details on how the UDP protocol works. The transfer is one-way(from Host1 to Server1) with no acknowledgment from Server1. This allows for high rate data transfer and beneficial in applications where data transfer is needed in real-time. \\ SDN supports the building and testing of such network scenarios with no reliant on infrastructure or hardware equipments, reduce expenses, and provides faster and convenient control of the entire network.
 
+\newpage
 \section{Task 4 - Multicast Video Stream Service}
-The final experiment emulates a local area network(LAN) and testing the multicast video streaming facility in the new building to facilitate learning. Multicasting in networking is a type of communication which is known as a one-to-many communication. In plain terms, a sender can broadcast messages to a some among many nodes in the network however the receivers are in control of actually receiving this messages. It is always advantageous to use multicast rather than multiple unicast communication\cite{1010101}.
+The final experiment emulates a local area network(LAN) where we test the multicast video streaming over the network for the new building to facilitate learning. Multicasting\cite{0202020} in networking is a type of communication which is also known as a one-to-many communication. In a connectionless network, multicast basically involves replicating packets and distributing them to multiple receivers. A multicast group refers to a set of senders and receivers who are involved in a multi-party communication session. It is always advantageous to use multicast rather than multiple unicast communication since it provides efficient means of communication among selected nodes within a large network\cite{1010101}.
+\subsection{Design and Configuration}
+The network to be tested consist of 2 switches, a video source acting as server, and three host devices which could be any ethernet enabled device. Table 5 contains the name and IP address for configuration on host devices. The host devices will have the same network address and the configuration to allow for multicast communication is activated on the server or video source, host1, and host2 which creates a multicast group for these devices.
     	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|}
@@ -341,6 +354,11 @@ The final experiment emulates a local area network(LAN) and testing the multicas
     	\end{figure}
 
 \newpage
+Fig. 16 shows the steps in activating the multicast on the required nodes. This can be done directly on the Mininet or at the node terminal when accessed with 'xterm' command on Mininet. The commands;
+	\begin{itemize}
+		\item \texttt{echo 0 > /proc/sys/net/ipv4/icmp\_ignore\_broadcasts}: allow node response to Internet Control Message Protocol(ICMP) echo request(ping request) broadcasted to every host on the network
+		\item \texttt{ip route add 224.0.0.0/8 dev <interface>}: configures route that ensures multicast traffic for 224.0.0.0/8 address range is sent through the interface specified
+	\end{itemize}
     	\begin{figure}[h]
 		\centering
         		\includegraphics[width=0.35\linewidth]{vs-1.png}
@@ -357,9 +375,10 @@ The final experiment emulates a local area network(LAN) and testing the multicas
 		\caption{Multicast video connection at multicast host}
 		\label{fig:t4-3}
 	\end{figure}
+After routing configuration, the video stream output is initiated from the video source on VLC through the terminal CLI of the video source, the command \texttt{vlc-wrapper} launches VLC where we select the video file, transfer protocol, and provide the network to which the streaming will be sent across. On the hosts terminal CLI, VLC is launched with the same command and the multicast video stream is connected using the URL \texttt{rtp://@224.0.0.1:5004}. Fig. 17 and 18 show these steps taken out respectively.
 
-\newpage
 \subsection{Results and Analysis}
+Once all configurations are completed, the video is seen on fig. 20 been streamed from the source across the multicast network where the two hosts(1 \& 2) can have the video output on the VLC player.
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\linewidth]{t4-multcast.png}
@@ -372,6 +391,7 @@ The final experiment emulates a local area network(LAN) and testing the multicas
 		\caption{Multicast video stream at host 3}
 		\label{fig:t4-5}
 	\end{figure}
+\par The third host who is not part of the multicast group cannot stream the video as shown on fig. 21. This confirms that the streaming is a multicast stream and only host devices within the multicast group can get access to the video stream. Fig. 22 shows a snippet of a Wireshark capture where we can see from Ethernet section of the packet that the destination MAC address is of a multicast type(IPv4mcast\_01). \\\\ During this process, we encounter a protocol known as the Real-Time Transfer Protocol(RTP) which is a used for transmission of media files(audio or graphics) over an IP network. Since it is also a form of UDP connection so it does not require acknowledgment in setting up the communication which makes it able to support voice and video communications over IP and online gaming.
 
 \newpage
 	\begin{figure}[h]
@@ -381,16 +401,29 @@ The final experiment emulates a local area network(LAN) and testing the multicas
 		\label{fig:t4-6}
 	\end{figure}
 	
-
+\section{Conclusion}
+After carrying out these experiments using SDN approach, we confirm that it provides an advantage to network manageability, flexibility, and summary of the network. There is also much advantage in terms of deployment of networks, configuration, fault tolerance, and scalability. 
+	\begin{table}[h]
+		\small
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Feature & Traditional Networking & Software-Defined Networking \\
+			\hline
+			Control plane & Distributed across individual devices & Centralised, managed by an SDN controller \\
+			Network Configuration & Manual configuration on each device & Automated configuration via software and APIs \\
+			Agility \& Flexibility & Difficult to adapt quickly & Quick reconfiguration \& programmable \\
+			Cost Efficiency & High cost due to infrastructure & Low cost due to virtualisation, \& less dependent on hardware \\
+			\hline
+		\end{tabular}
+	\end{table}
+\par In this context, we have successfully being able to test out various network topologies and communication protocols without acquiring any hardware or infrastructure.  
 \newpage
 \section{References}
 \bibliographystyle{plain}
 \bibliography{references}
 
 \newpage
-\begin{center} 
-\appendix{Appendix}
-\end{center}
+\section{Appendix}
 \renewcommand{\thesection}{\alph{section}}
 \setcounter{section}{0}
 \section{Task 1 code}
@@ -505,19 +538,6 @@ from mininet.topo import Topo
 from mininet.node import CPULimitedHost, Host, Node
 from mininet.node import OVSSwitch
 from mininet.topo import Topo
-
-class VLANHost(Host):
-	def config(self, vlan=100, **params):
-        	"""Configure VLANHost with a VLAN."""
-        	r = super(Host, self).config(**params)
-        	intf = self.defaultIntf()
-        	self.cmd('ifconfig \%s inet 0' \% intf)
-        	self.cmd('vconfig add \%s \%d' \% (intf, vlan))
-        	self.cmd('ifconfig \%s.\%d inet \%s' \% (intf, vlan, params['ip']))
-        	newName = '\%s.\%d' \% (intf, vlan)
-        	intf.name = newName
-        	self.nameToIntf[newName] = intf
-        	return r
 
 class MyTopo(Topo):  
 	"Simple topology with VLAN support."
