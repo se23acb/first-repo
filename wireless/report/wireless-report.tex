@@ -64,7 +64,7 @@ Since research on this topic is still in progress, there are not many devices su
 \newpage
 \subsection{Emulation environment specifications}
 For this experiment, we utilise a microcomputer iMac with the following specifications: Processor 3 GHz 6-Core Intel Core i5, 16GB of ram, running the macOS 15.1, and VirtualBox Oracle VM version 7.1.2.
-In this microcomputer, under the management of VirtualBox, we installed the following guest operating systems: Mininet emulator version 2.0 on Linux operating system Ubuntu 64bits with 4GB of RAM; ONOS controller version ??.
+In this microcomputer, under the management of VirtualBox, we installed the following guest operating systems: Mininet emulator version 2.0 on Linux operating system Ubuntu 64bits with 4GB of RAM; ONOS controller version 4.2.14.
 \section{Task 1 - WiFi Network Emulation}
 In this task, we emulate a wireless network designed for a floor in the new building. For this purpose, we emulate 3 stations and 5 access points. The stations may represent a smart hand-held device which can vary from smartphone to a laptop, UE or to any WiFi compatible device. The stations carry a Class C private IP address of the same network. Access points are connected using a physical link facilitating a linear topology. The new building would create a minimalistic noise threshold of -91dBm. The access points are positioned strategically within the floor to make space for a signal dead-zone(red-spot) and 3 stations will be in mobility state to emulate real-life network scenario. \\ A python script will contain the code for this configuration and upon completion, we start the network using Mininet on a Linux terminal and view the network emulation on the Mininet-GUI feature while having to observe access point association, full connectivity between all nodes in the network on the Mininet CLI, and briefly understand how communication channels are used in a wireless network. \\\\
 The figures below show the outline of the floor-plan in context and position of APs and  stations in the design.
@@ -72,19 +72,18 @@ The figures below show the outline of the floor-plan in context and position of 
 		\centering
         		\minipage{0.5\textwidth}
         		\includegraphics[width=0.9\linewidth]{floorplan1.png}
-        		\caption{Floor-plan in context}
+        		\caption{Floor-plan}
         		\label{fig:t1-1}
         		\endminipage
         		\minipage{0.4\textwidth}
         		\includegraphics[width=0.9\linewidth]{floorplan.png}
-        		\caption{Floor-plan with infrastructure}
+        		\caption{Floor-plan with network topology}
        		\label{fig:t1-2}
        		\endminipage
     	\end{figure} 
 \subsection{Design and Configuration}
 Both figures show the outline of the floor-plan in context with the dimensions included on fig. 3 while fig. 4 is a snapshot of the Mininet GUI with the positions of the stations and access points and the range of coverage of all devices. The 'red-spotted' zone as seen remains free of WiFi signals as required in the design. \\ Table 1 contains the details of stations and access points which are used for the network configuration in a python script. All three stations share the same network address and have full authenticated access to each access points. \\ The access points are positioned strategically and linked serially to ensure the required zones within the floor have strong WiFi frequency coverage and support full connectivity of the stations. To emulate real networking scenario, mobility is included for the stations, details are shown in Table 2. Mobility attributes in terms of velocity or speed of motion for each station are specified. The mobility attributes are added to the python code for the network configuration which is captured in the appendix section of this document.
   	\begin{table}[h]
-        		\centering
         		\begin{tabular}{|c|c|c|c|c|c|c|c|}
         			\hline
         			DEVICE & MAC & IPv4 & (x,y) & SSID & PASSWORD & RANGE & CHANNEL\\
@@ -103,7 +102,6 @@ Both figures show the outline of the floor-plan in context with the dimensions i
         \label{tab:1}
     	\end{table}
     	\begin{table}[h]
-        		\centering
        		\begin{tabular}{|c|c|c|c|c|}
         			\hline
         			DEVICE & START LOCATION & END LOCATION & START-STOP TIME & MOVING SPEED(min-max)  \\
@@ -125,6 +123,7 @@ Commencing the test, we prepare the python script for the network topology with 
        			\label{fig:t1-3}
         		\endminipage
        		\minipage{0.5\textwidth}
+		\centering
         			\includegraphics[width=0.9\linewidth]{afterMobility.png}
         			\caption{After mobility}
         			\label{fig:t1-4}
@@ -328,7 +327,7 @@ After we activate the network apps on the ONOS controller and start the network 
 \section{Task 4 - Multicast Video Stream Service}
 The final experiment emulates a local area network(LAN) where we test the multicast video streaming over the network for the new building to facilitate learning. Multicasting\cite{0202020} in networking is a type of communication which is also known as a one-to-many communication. In a connectionless network, multicast basically involves replicating packets and distributing them to multiple receivers. A multicast group refers to a set of senders and receivers who are involved in a multi-party communication session. It is always advantageous to use multicast rather than multiple unicast communication since it provides efficient means of communication among selected nodes within a large network\cite{1010101}.
 \subsection{Design and Configuration}
-The network to be tested consist of 2 switches, a video source acting as server, and three host devices which could be any ethernet enabled device. Table 5 contains the name and IP address for configuration on host devices. The host devices will have the same network address and the configuration to allow for multicast communication is activated on the server or video source, host1, and host2 which creates a multicast group for these devices.
+The network to be tested consist of 2 switches, a video source acting as server, and three host devices which could be any ethernet enabled device. Table 5 contains the name and IP address for configuration on host devices. The host devices will have the same network address and the configuration to allow for multicast communication is activated on video source(VS), host1(H1), and host2(H2) which creates a multicast group for these devices.
     	\begin{table}[h]
         		\centering
         		\begin{tabular}{|c|c|}
@@ -402,21 +401,24 @@ Once all configurations are completed, the video is seen on fig. 20 been streame
 	\end{figure}
 	
 \section{Conclusion}
-After carrying out these experiments using SDN approach, we confirm that it provides an advantage to network manageability, flexibility, and summary of the network. There is also much advantage in terms of deployment of networks, configuration, fault tolerance, and scalability. 
+At the end of the experiments, it is confirmed that SDN provides greater advantages to network developers or operators in the manner of network control and also a summary of the network compared to the traditional way of computer networking. There are also vast improvements in the deployment of networks, configuration, fault tolerance, and scalability as demonstrated in the tasks. \\ The table below shows a comparison of some features between traditional and software-defined networking.
 	\begin{table}[h]
 		\small
+		\centering
 		\begin{tabular}{|c|c|c|}
 			\hline
 			Feature & Traditional Networking & Software-Defined Networking \\
 			\hline
-			Control plane & Distributed across individual devices & Centralised, managed by an SDN controller \\
-			Network Configuration & Manual configuration on each device & Automated configuration via software and APIs \\
-			Agility \& Flexibility & Difficult to adapt quickly & Quick reconfiguration \& programmable \\
-			Cost Efficiency & High cost due to infrastructure & Low cost due to virtualisation, \& less dependent on hardware \\
+			Control plane & Distributed across devices & Centralised \& managed by SDN controller \\
+			Network Configuration & Manual configuration & Configuration via software and APIs \\
+			Agility \& Flexibility & Difficult to adapt quickly & Quick reconfiguration \\
+			Cost Efficiency & High cost of infrastructure & Low cost due to virtualisation \\
+			Programmability & Difficult to program & Easy to program via SDN controller \\
 			\hline
 		\end{tabular}
 	\end{table}
-\par In this context, we have successfully being able to test out various network topologies and communication protocols without acquiring any hardware or infrastructure.  
+\par To conclude, we point out the achievements of software-defined networking in the emulation of the wireless and ad-hoc network, in testing the Voice over IP(VoIP) communication, and the multicast streaming service over a network. The configuration and deployment of the networks required less time and effort, very low cost, and can be easily managed due to the agility and flexibility offered. Researchers and network designers can test out new ideas and innovations while network concepts can be taught in education setting in a very efficient and convenient way.
+
 \newpage
 \section{References}
 \bibliographystyle{plain}
