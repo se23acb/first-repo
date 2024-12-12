@@ -1,60 +1,63 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{xx}
 
-\bibitem{CONRAD201263}
-Eric Conrad, Seth Misenar, and Joshua Feldman.
-\newblock Chapter 3 - domain 2: Telecommunications and network security.
-\newblock In Eric Conrad, Seth Misenar, and Joshua Feldman, editors, {\em CISSP
-  Study Guide (Second Edition)}, pages 63--141. Syngress, Boston, second
-  edition edition, 2012.
+\harvarditem[Conrad et~al.]{Conrad, Misenar \harvardand\
+  Feldman}{2012}{CONRAD201263}
+Conrad, E., Misenar, S. \harvardand\ Feldman, J.  \harvardyearleft
+  2012\harvardyearright , Chapter 3 - domain 2: Telecommunications and network
+  security, {\em in} E.~Conrad, S.~Misenar \harvardand\ J.~Feldman, eds, `CISSP
+  Study Guide (Second Edition)', second edition edn, Syngress, Boston,
+  pp.~63--141.
+\newline\harvardurl{https://www.sciencedirect.com/science/article/pii/B9781597499613000030}
 
-\bibitem{6860404}
-Rogério Leão~Santos de~Oliveira, Christiane~Marie Schweitzer, Ailton~Akira
-  Shinoda, and Ligia~Rodrigues Prete.
-\newblock Using mininet for emulation and prototyping software-defined
-  networks.
-\newblock pages 1--6, 2014.
+\harvarditem[de~Oliveira et~al.]{de~Oliveira, Schweitzer, Shinoda \harvardand\
+  Prete}{2014}{6860404}
+de~Oliveira, R. L.~S., Schweitzer, C.~M., Shinoda, A.~A. \harvardand\ Prete,
+  L.~R.  \harvardyearleft 2014\harvardyearright , `Using mininet for emulation
+  and prototyping software-defined networks',  pp.~1--6.
 
-\bibitem{Haji_Zeebaree_Saeed_Ameen_Shukur_Omar_Sadeeq_Ageed_Ibrahim_Yasin_2021}
-Saad~H. Haji, Subhi R.~M. Zeebaree, Rezgar~Hasan Saeed, Siddeeq~Y. Ameen,
-  Hanan~M. Shukur, Naaman Omar, Mohammed A.~M. Sadeeq, Zainab~Salih Ageed,
-  Ibrahim~Mahmood Ibrahim, and Hajar~Maseeh Yasin.
-\newblock Comparison of software defined networking with traditional
-  networking.
-\newblock {\em Asian Journal of Research in Computer Science}, 9(2):1–18, May
-  2021.
+\harvarditem[Haji et~al.]{Haji, Zeebaree, Saeed, Ameen, Shukur, Omar, Sadeeq,
+  Ageed, Ibrahim \harvardand\
+  Yasin}{2021}{Haji_Zeebaree_Saeed_Ameen_Shukur_Omar_Sadeeq_Ageed_Ibrahim_Yasin_2021}
+Haji, S.~H., Zeebaree, S. R.~M., Saeed, R.~H., Ameen, S.~Y., Shukur, H.~M.,
+  Omar, N., Sadeeq, M. A.~M., Ageed, Z.~S., Ibrahim, I.~M. \harvardand\ Yasin,
+  H.~M.  \harvardyearleft 2021\harvardyearright , `Comparison of software
+  defined networking with traditional networking', {\em Asian Journal of
+  Research in Computer Science} {\bf 9}(2),~1–18.
+\newline\harvardurl{https://journalajrcos.com/index.php/AJRCOS/article/view/169}
 
-\bibitem{6994333}
-Diego Kreutz, Fernando M.~V. Ramos, Paulo~Esteves Veríssimo, Christian~Esteve
-  Rothenberg, Siamak Azodolmolky, and Steve Uhlig.
-\newblock Software-defined networking: A comprehensive survey.
-\newblock {\em Proceedings of the IEEE}, 103(1):14--76, 2015.
+\harvarditem[Kreutz et~al.]{Kreutz, Ramos, Veríssimo, Rothenberg, Azodolmolky
+  \harvardand\ Uhlig}{2015}{6994333}
+Kreutz, D., Ramos, F. M.~V., Veríssimo, P.~E., Rothenberg, C.~E., Azodolmolky,
+  S. \harvardand\ Uhlig, S.  \harvardyearleft 2015\harvardyearright ,
+  `Software-defined networking: A comprehensive survey', {\em Proceedings of
+  the IEEE} {\bf 103}(1),~14--76.
 
-\bibitem{6587999}
-Adrian Lara, Anisha Kolasani, and Byrav Ramamurthy.
-\newblock Network innovation using openflow: A survey.
-\newblock {\em IEEE Communications Surveys & Tutorials}, 16(1):493--512, 2014.
+\harvarditem[Lara et~al.]{Lara, Kolasani \harvardand\
+  Ramamurthy}{2014}{6587999}
+Lara, A., Kolasani, A. \harvardand\ Ramamurthy, B.  \harvardyearleft
+  2014\harvardyearright , `Network innovation using openflow: A survey', {\em
+  IEEE Communications Surveys & Tutorials} {\bf 16}(1),~493--512.
 
-\bibitem{5432117}
-Stephen Lukasik.
-\newblock Why the arpanet was built.
-\newblock {\em IEEE Annals of the History of Computing}, 33(3):4--21, 2011.
+\harvarditem{Lukasik}{2011}{5432117}
+Lukasik, S.  \harvardyearleft 2011\harvardyearright , `Why the arpanet was
+  built', {\em IEEE Annals of the History of Computing} {\bf 33}(3),~4--21.
 
-\bibitem{10220519}
-Koketso Molemane~Rodney Mokoena, Ramahlapane~Lerato Moila, and Prof~Mthulisi
-  Velempini.
-\newblock Improving network management with software defined networking using
-  openflow protocol.
-\newblock In {\em 2023 International Conference on Artificial Intelligence, Big
-  Data, Computing and Data Communication Systems (icABCD)}, pages 1--5, 2023.
+\harvarditem[Mokoena et~al.]{Mokoena, Moila \harvardand\
+  Velempini}{2023}{10220519}
+Mokoena, K. M.~R., Moila, R.~L. \harvardand\ Velempini, P.~M.  \harvardyearleft
+  2023\harvardyearright , Improving network management with software defined
+  networking using openflow protocol, {\em in} `2023 International Conference
+  on Artificial Intelligence, Big Data, Computing and Data Communication
+  Systems (icABCD)', pp.~1--5.
 
-\bibitem{1010101}
-C.~S.~R. Murthy and B.~S. Manoj.
-\newblock {\em Ad hoc wireless networks: architectures and protocols}.
-\newblock Prentice Hall PTR, Upper Saddle River, N.J, 2004.
+\harvarditem{Murthy \harvardand\ Manoj}{2004}{1010101}
+Murthy, C. S.~R. \harvardand\ Manoj, B.~S.  \harvardyearleft
+  2004\harvardyearright , {\em Ad hoc wireless networks: architectures and
+  protocols}, Prentice Hall PTR, Upper Saddle River, N.J.
 
-\bibitem{0202020}
-C.~. Toh.
-\newblock {\em Wireless ATM and AD-HOC networks: Protocols and architectures}.
-\newblock Kluwer Academic, Boston, [Mass.], 1997.
+\harvarditem{Toh}{1997}{0202020}
+Toh, C.~.  \harvardyearleft 1997\harvardyearright , {\em Wireless ATM and
+  AD-HOC networks: Protocols and architectures}, Kluwer Academic, Boston,
+  [Mass.].
 
 \end{thebibliography}
