@@ -21,7 +21,7 @@ def topology( args ):
     net.configureNodes()
 
     info( "*** Creating links\n" )
-    # testing 'batman_adv', 'batmand', 'olsrd' manet protocol
+    # test 'batman_adv', 'batmand', 'olsrd' protocol
     net.plotGraph( min_x=-20, min_y=-40, max_x=120, max_y=90 )
     net.addLink( sta1, cls=adhoc, intf='STA1-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='batman_adv' )
     net.addLink( sta2, cls=adhoc, intf='STA2-wlan0', ssid='adhocUH', mode='g', channel=5, ht_cap='HT40+', proto='batman_adv' )

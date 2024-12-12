@@ -1,18 +1,14 @@
-#!/usr/bin/python
 import sys
 from mininet.node import Controller
 from mininet.log import setLogLevel, info
 from mn_wifi.cli import CLI
 from mn_wifi.net import Mininet_wifi
 
-#python func to configure wireless network topology
+#function for wireless network topology
 def topology():
     info( "**creating network**\n" )
     net = Mininet_wifi()
 
-    #channel=1 specifies freq within 2.4GHz, band=5 allows AP to operate on freq band 5GHz
-    #mode='g' configure AP to operate at IEEE 802.11g mode (speeds upto 54mbps on 2.4GHz)
-    #failMode='standalone' allows AP to operate when connection to controller is lost
     info( "**creating nodes**\n" )
     ap1 = net.addAccessPoint( 'AP1', mac='00:00:00:00:00:00', ssid='AP1', mode='g', channel='1', position='30,117.5', band='5', range=35 )
     ap2 = net.addAccessPoint( 'AP2', mac='00:00:00:00:00:01', ssid='AP2', mode='g', channel='1', position='60,117.5', band='5', range=35 )

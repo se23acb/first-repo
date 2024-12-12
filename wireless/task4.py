@@ -12,7 +12,7 @@ class MyTopo( Topo ):
         # Initialize topology
         Topo.__init__( self )
 
-        # Add hosts and switches TODO
+        # hosts and switches
         h1 = self.addHost('H1', ip='50.10.10.10/8')
         h2 = self.addHost('H2', ip='50.10.10.11/8')
         h3 = self.addHost('H3', ip='50.10.10.12/8')
