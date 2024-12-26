@@ -1,3 +1,8 @@
+PROJRCT !DEAS
+- tunnelling in Mobile IP
+
+- ensure internal validity of the research by accounting for confounding variables
+
 *** project aims ***
 - create github and make repository
 - follow lap instr. to clone repo onto local machine
